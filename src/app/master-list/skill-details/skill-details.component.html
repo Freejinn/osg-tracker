@@ -1,0 +1,11 @@
+<div >
+  <div class="form-check"
+  *ngFor="let item of selectedSkillDesc | keyvalue">
+    <input class="form-check-input" type="checkbox" id="flexCheckDefault" />
+    <label for="flexCheckDefault">
+      <h5>{{ item.key.slice(3) }}</h5>
+      <p>{{ item.value }}</p>
+    </label>
+  </div>
+</div>
+

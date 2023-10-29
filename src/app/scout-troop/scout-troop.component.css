@@ -1,0 +1,27 @@
+a:hover {
+    cursor: pointer;
+  }
+  img {
+    margin-right: 10px;
+  }
+  
+  .list-group {
+    background-color: #556b2f;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+  
+  .dropdown-menu {
+    transition: 0.5s;
+    border: 2px solid  #3f383f;
+    color:  #3f383f;
+    border-radius: 0;
+    padding: 0px;
+  }
+
+  

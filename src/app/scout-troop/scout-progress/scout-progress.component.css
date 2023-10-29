@@ -1,0 +1,50 @@
+img {
+    margin-right: 10px;
+  }
+  
+  .list-group {
+    background-color: #556b2f;
+    border-radius: 0;
+    display: flex;
+  }
+  
+  #progress-bar {
+    margin: 5px;
+  }
+  
+  #progress-bar-outdoor {
+    background-color: #4eac31;
+  }
+
+  #progress-bar-civics {
+    background-color: #c73930;
+  }
+  #progress-bar-creative {
+    background-color: goldenrod;
+    ;
+  }
+  #progress-bar-life {
+    background-color: #416aed;
+  }
+  #progress-bar-comprehensive {
+    background-color: rgb(35, 58, 42);
+  }
+  
+  .yourProgress {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: end;
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  a:hover {
+    cursor: pointer;
+  }
+
+  
+  

@@ -1,0 +1,11 @@
+.form-check {
+    margin: 10px;
+}
+
+.form-check-input[type='checkbox']:checked {
+    background-color: #c73930;
+    border-color: #c73930;
+  }
+.form-check-input[type='checkbox'] {
+    border: 2px solid #3f383f;
+  }
