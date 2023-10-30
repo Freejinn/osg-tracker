@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Skill } from '../models/skill.model';
+import {Component, inject, OnInit} from '@angular/core';
+import {Skill, SkillPart} from '../models/skill.model';
 import { PathfinderListService } from './pathfinder-list.service';
 
 @Component({
@@ -9,20 +9,12 @@ import { PathfinderListService } from './pathfinder-list.service';
   providers: [PathfinderListService]
 })
 
-export class MasterListComponent implements OnInit {
-  genSkills: Skill[];
-  outdoorSkills: Skill[];
-  civicSkills: Skill[];
-  creativeSkills: Skill[];
-  lifeSkills: Skill[];
+export class MasterListComponent {
+  listService = inject(PathfinderListService);
 
-  constructor(private skillsListService: PathfinderListService ) {};
+  skillParentList: Observable<ParentSkill[]> = this.listService.getList();
 
-  ngOnInit() {
-    this.genSkills = this.skillsListService.getGenSkills();
-    this.outdoorSkills = this.skillsListService.getOutdoorSkills();
-    this.civicSkills = this.skillsListService.getCivicSkills();
-    this.creativeSkills = this.skillsListService.getCreativeSkills();
-    this.lifeSkills = this.skillsListService.getLifeSkills();
+  handlePartSelection(part: SkillPart) {
+    this.listService.updateListItem(part);
   }
 }
