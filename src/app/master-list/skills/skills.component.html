@@ -1,40 +1,38 @@
 <div ngbDropdown >
   <div class="list-group">
-    <a class="list-group-item clearfix" 
-    (click)="onSelected()"
-    ngbDropdownToggle>
+    <a class="list-group-item clearfix"
+       ngbDropdownToggle>
       <div class="d-flex align-items-center" style="display: flex;">
         <img
-          [src]="skills.imgPath"
-          alt="{{ skills.name }}"
+          [src]="skill.imgPath"
+          alt="{{ skill.name }}"
           class="img-responsive col-2"
           style="max-width: 40px"
         />
         <h5 class="col-2" style="color:  #3f383f
-        ;"> {{ skills.name }}</h5>
-      
-      <div class="yourProgress">
-        <p>Progress</p>
-      <div class="progress col-10" id="progress-bar"
-      style="height: 8px;"
-      >
-        <div
-          class="progress-bar"
-          role="progress-bar"
-          style="align-items: end;"
-          aria-valuenow=""
-          aria-valuemin="0"
-          aria-valuemax="100"
-        >
+      ;"> {{ skill.name }}</h5>
+
+        <div class="yourProgress">
+          <p>Progress</p>
+          <div class="progress col-10" id="progress-bar"
+               style="height: 8px;"
+          >
+            <div
+              class="progress-bar"
+              role="progress-bar"
+              style="align-items: end;"
+              aria-valuenow=""
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-    </div>
     </a>
-    <div class="col-11" ngbDropdownMenu>
-    <app-skill-details></app-skill-details>
-  </div>
+    <div class="skill-detail-container col-11" ngbDropdownMenu>
+      <app-skill-details [parts]="skill?.parts" (skillSelected)="partSelected.emit($event)"></app-skill-details>
+    </div>
   </div>
 </div>
 
- 
