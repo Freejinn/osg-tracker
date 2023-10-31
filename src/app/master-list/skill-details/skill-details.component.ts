@@ -1,8 +1,5 @@
-import {Component, OnInit, OnDestroy, Output, EventEmitter, Input} from '@angular/core';
-import { Subscription } from 'rxjs';
-
-import { PathfinderListService } from '../pathfinder-list.service';
-import {Skill, SkillBadge, SkillPart} from 'src/app/models/skill.model';
+import {Component, Output, EventEmitter, Input} from '@angular/core';
+import {SkillPart} from 'src/app/models/skill.model';
 
 @Component({
   selector: 'app-skill-details',

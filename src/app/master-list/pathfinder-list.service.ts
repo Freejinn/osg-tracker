@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import {Observable, of, Subject} from 'rxjs';
-
-import {Skill, SkillParent} from '../models/skill.model';
-import {skillParents, skillsConst} from "../../assets/constants/skills.const";
+import {SkillBadge, SkillParent, SkillPart} from '../models/skill.model';
+import {skillsConst} from "../../assets/constants/skills.const";
 
 @Injectable({providedIn: 'root'})
 export class PathfinderListService {
-  skillSelected = new Subject<Skill>();
+  // skillSelected = new Subject<Skill>();
 
   getList(): Observable<SkillParent[]> {
     return of(skillsConst);
   }
 
-  updateBadgePercentage(id: string): SkillParent {
+  updatePart(part: SkillPart, parentId: string): void {
 
   }
 }

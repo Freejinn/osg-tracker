@@ -13,12 +13,12 @@ a {
 }
 
 #skillList {
-    border-radius: 0; 
+    border-radius: 0;
     padding: 0;
     width: 98%;
 }
 
-#skill-container {
+#skill-option-container {
     background-color: #64815a;
     text-align: center;
 }

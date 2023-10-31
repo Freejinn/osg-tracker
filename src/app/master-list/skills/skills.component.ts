@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Skill, SkillBadge, SkillPart} from 'src/app/models/skill.model';
-import { PathfinderListService } from '../pathfinder-list.service';
+import {SkillBadge, SkillPart} from 'src/app/models/skill.model';
+
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
@@ -8,14 +8,5 @@ import { PathfinderListService } from '../pathfinder-list.service';
 })
 export class SkillsComponent {
   @Input() skill: SkillBadge;
-  @Output() partSelected = new EventEmitter<SkillPart>()
-  percentage: number;
-
-  ngOnInit(): void {
-    this.percentage = for
-  }
-
-  handleSelection(badge: SkillPart) {
-    // emit an event to update skill badge data
-  }
+  @Output() partSelected = new EventEmitter<SkillPart>();
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Skill } from 'src/app/models/skill.model';
+import {SkillParent} from 'src/app/models/skill.model';
 import { PathfinderListService } from 'src/app/master-list/pathfinder-list.service';
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -10,13 +11,13 @@ import { PathfinderListService } from 'src/app/master-list/pathfinder-list.servi
   styleUrls: ['./scout-progress.component.css']
 })
 export class ScoutProgressComponent implements OnInit {
-  genSkills: Skill[];
+  genSkills: Observable<SkillParent[]>;
 
   constructor(private skillsListService: PathfinderListService ) {};
 
 
   ngOnInit(): void {
-    this.genSkills = this.skillsListService.getGenSkills();
+    this.genSkills = this.skillsListService.getList();
   }
 
 }

@@ -1,7 +1,6 @@
 <div ngbDropdown >
   <div class="list-group">
     <a class="list-group-item clearfix"
-       (click)="onSelected()"
        ngbDropdownToggle>
       <div class="d-flex align-items-center" style="display: flex;">
         <img
@@ -31,8 +30,8 @@
         </div>
       </div>
     </a>
-    <div class="col-11" ngbDropdownMenu>
-      <app-skill-details [parts]="skill?.parts" (skillSelected)="handleSelection($event)"></app-skill-details>
+    <div class="skill-detail-container col-11" ngbDropdownMenu>
+      <app-skill-details [parts]="skill?.parts" (skillSelected)="partSelected.emit($event)"></app-skill-details>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@ export interface SkillParent {
   id: string;
   label: string;
   skills: SkillBadge[];
-  listColor: string;
+  backgroundColor: string;
 }
 
 export interface SkillBadge {

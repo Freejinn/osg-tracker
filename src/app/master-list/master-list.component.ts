@@ -1,6 +1,7 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {Skill, SkillPart} from '../models/skill.model';
+import {Component, inject} from '@angular/core';
+import {SkillParent, SkillPart} from '../models/skill.model';
 import { PathfinderListService } from './pathfinder-list.service';
+import {Observable, tap} from "rxjs";
 
 @Component({
   selector: 'app-master-list',
@@ -12,9 +13,9 @@ import { PathfinderListService } from './pathfinder-list.service';
 export class MasterListComponent {
   listService = inject(PathfinderListService);
 
-  skillParentList: Observable<ParentSkill[]> = this.listService.getList();
+  skillParentList$: Observable<SkillParent[]> = this.listService.getList().pipe(tap(res => console.log('res: ', res)));
 
-  handlePartSelection(part: SkillPart) {
-    this.listService.updateListItem(part);
+  handlePartSelected(part: SkillPart, parent: SkillParent) {
+    this.listService.updatePart(part, parent.id);
   }
 }
