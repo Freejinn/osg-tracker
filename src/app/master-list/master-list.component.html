@@ -1,69 +1,19 @@
   
-  <div ngbDropdown id="skill-container">
-    <button class="btn col-12 text-light"
-    style="background-color: #4eac31; margin-top: 10px;" ngbDropdownToggle>
-       Outdoor Skills
-    </button>
-    <div class="col-12" ngbDropdownMenu id="skillList">
-      <app-skills
-        *ngFor="let skill of outdoorSkills"
-        [skills]="skill"
-      ></app-skills>
-    </div>
-  </div>
-
-  <div ngbDropdown id="skill-container">
-    <button class="btn col-12 text-light"  
-    style="background-color:  #c73930
-    " ngbDropdownToggle>
-        Civics and Community Skills
-    </button>
-    <div class="col-12" ngbDropdownMenu id="skillList">
-      <app-skills
-        *ngFor="let skill of civicSkills"
-        [skills]="skill"
-      ></app-skills>
-    </div>
-  </div>
-
-  <div ngbDropdown id="skill-container">
-    <button class="btn col-12 text-light"  
-    style="background-color:  goldenrod
-    ;" ngbDropdownToggle>
-        Creative Arts Skills
-    </button>
-    <div class="col-12" ngbDropdownMenu id="skillList">
-      <app-skills
-        *ngFor="let skill of creativeSkills"
-        [skills]="skill"
-      ></app-skills>
-    </div>
-  </div>
-
-  <div ngbDropdown id="skill-container">
-    <button class="btn col-12 text-light" 
-    style="background-color: #416aed
-    ;
-    " ngbDropdownToggle>
-     Life Skills
-    </button>
-    <div class="col-12" ngbDropdownMenu id="skillList">
-      <app-skills
-        *ngFor="let skill of lifeSkills"
-        [skills]="skill"
-      ></app-skills>
-    </div>
-  </div>
-
-  <div ngbDropdown id="skill-container">
-    <button class="btn col-12 text-light"  
-    style="background-color: rgb(35, 58, 42); margin-bottom: 10px;" 
-    ngbDropdownToggle>
-      Comprehensive Skill Sets
-    </button>
-    <div class="col-12" 
-    ngbDropdownMenu 
-    id="skillList">
-      <app-skills *ngFor="let skill of genSkills" [skills]="skill"></app-skills>
-    </div>
-  </div>
+  <ng-container *ngIf="skillParentList | async as list">
+    <ng-container *ngFor="let item of list">
+      <div ngbDropdown id="skill-container">
+        <button class="btn col-12 text-light"
+        [style.backgroundColor]="item?.listColor"
+        ngbDropdownToggle>
+            {{ item?.label }}
+        </button>
+        <div class="col-12" 
+        ngbDropdownMenu id="skillList">
+          <app-skills
+          *ngFor="let skill of item?.skills"
+          [skill]="skill"></app-skills>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+  

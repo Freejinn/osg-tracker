@@ -1,30 +1,31 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
-import { PathfinderListService } from '../pathfinder-list.service';
-import { Skill } from 'src/app/models/skill.model';
+import { SkillParts } from 'src/app/models/skill.model';
 
 @Component({
   selector: 'app-skill-details',
   templateUrl: './skill-details.component.html',
   styleUrls: ['./skill-details.component.css']
 })
-export class SkillDetailsComponent implements OnInit, OnDestroy {
-selectedSkillDesc: object;
-private listSub: Subscription;
+export class SkillDetailsComponent {
+@Input() parts: SkillParts[];
+@Output() skillSelected: EventEmitter<SkillParts> = new EventEmitter<SkillParts>();
 
-constructor(private skillsListService: PathfinderListService) {};
+//   selectedSkillDesc: object;
+// private listSub: Subscription;
 
-ngOnInit() {
-  this.listSub = this.skillsListService.skillSelected
-  .subscribe(
-    (genSkills: Skill) => {
-      this.selectedSkillDesc = genSkills.description;
-      });
-}
+// constructor(private skillsListService: PathfinderListService) {};
 
-ngOnDestroy(): void {
-  this.listSub.unsubscribe();
-}
+// ngOnInit() {
+//   this.listSub = this.skillsListService.skillSelected
+//   .subscribe(
+//     (genSkills: SkillParent) => {
+//       this.selectedSkillDesc = genSkills.description;
+//       });
+// }
+
+// ngOnDestroy(): void {
+//   this.listSub.unsubscribe();
+// }
 
 }

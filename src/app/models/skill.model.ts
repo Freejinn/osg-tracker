@@ -1,17 +1,22 @@
-// export class Skill {
-//     constructor(public imgPath: string, public name: string, public description: object) {}
-// }
+export interface SkillParent {
+    id: number;
+    label: string;
+    listColor: string;
+    skills: SkillBadge[];
 
-export class Skill {
-    public imgPath: string;
-    public name: string;
-    public description: object;
-    
-
-    constructor(imgPath: string, name: string, desc: object) {
-        this.imgPath = imgPath;
-        this.name = name;
-        this.description = desc;
-    }
 }
 
+export interface SkillBadge {
+    id: number;
+    imgPath: string;
+    label: string;
+    progressPercentage: number;
+    parts: SkillParts[];
+
+}
+
+export interface SkillParts {
+    label: string;
+    descrip: string;
+    selected: boolean;
+}
