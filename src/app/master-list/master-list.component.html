@@ -1,19 +1,20 @@
   
-  <ng-container *ngIf="skillParentList | async as list">
-    <ng-container *ngFor="let item of list">
+  <section>
+    <ng-container *ngFor="let skillParent of skillParentList$ | async">
       <div ngbDropdown id="skill-container">
         <button class="btn col-12 text-light"
-        [style.backgroundColor]="item?.listColor"
+        [ngStyle]="{'background-color': skillParent?.backgroundColor}"
         ngbDropdownToggle>
-            {{ item?.label }}
+            {{ skillParent?.label }}
         </button>
         <div class="col-12" 
         ngbDropdownMenu id="skillList">
           <app-skills
-          *ngFor="let skill of item?.skills"
-          [skill]="skill"></app-skills>
+          *ngFor="let skill of skillParent?.skills"
+          [skill]="skill"
+          ></app-skills>
         </div>
       </div>
     </ng-container>
-  </ng-container>
+  </section>
   

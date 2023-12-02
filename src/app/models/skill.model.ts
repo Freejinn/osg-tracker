@@ -1,7 +1,7 @@
 export interface SkillParent {
     id: number;
     label: string;
-    listColor: string;
+    backgroundColor: string;
     skills: SkillBadge[];
 
 }

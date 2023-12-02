@@ -1,18 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input, EventEmitter, inject } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
-
-import { SkillParent } from '../models/skill.model';
+import { HttpClient } from '@angular/common/http';
+import { SkillParent, SkillBadge, SkillParts } from '../models/skill.model';
 import { skillsConst } from '../../assets/Constants/skills.const'
 
 @Injectable({providedIn: 'root'})
 export class PathfinderListService {
-  skillSelected = new Subject<SkillParent>();
+  http = inject(HttpClient);
+// @Input() badgeSelected: EventEmitter<SkillBadge>;
 
   getList(): Observable<SkillParent[]> {
-    return of(skillsConst);
+    return this.http.get();
   }
-
-  
+    
 }
 
 

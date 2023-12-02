@@ -5,27 +5,14 @@ import { SkillParts } from 'src/app/models/skill.model';
 @Component({
   selector: 'app-skill-details',
   templateUrl: './skill-details.component.html',
-  styleUrls: ['./skill-details.component.css']
+  styleUrls: ['./skill-details.component.css'],
 })
 export class SkillDetailsComponent {
-@Input() parts: SkillParts[];
-@Output() skillSelected: EventEmitter<SkillParts> = new EventEmitter<SkillParts>();
+  @Input() parts: SkillParts[];
+  @Output() skillSelected = new EventEmitter<SkillParts>();
 
-//   selectedSkillDesc: object;
-// private listSub: Subscription;
-
-// constructor(private skillsListService: PathfinderListService) {};
-
-// ngOnInit() {
-//   this.listSub = this.skillsListService.skillSelected
-//   .subscribe(
-//     (genSkills: SkillParent) => {
-//       this.selectedSkillDesc = genSkills.description;
-//       });
-// }
-
-// ngOnDestroy(): void {
-//   this.listSub.unsubscribe();
-// }
+  selectPart(part: SkillParts) {
+    this.skillSelected.emit(part);
+  }
 
 }

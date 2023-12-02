@@ -4,7 +4,7 @@ export const skillsConst: SkillParent[] = [
   {
     id: 1,
     label: 'Comprehensive Skills',
-    listColor: 'rgb(35, 58, 42)',
+    backgroundColor: 'rgb(35, 58, 42)',
     skills: [
       {
         id: 1,
@@ -324,7 +324,7 @@ export const skillsConst: SkillParent[] = [
   {
     id: 2,
     label: 'Outdoor Skills',
-    listColor: '#4eac31',
+    backgroundColor: '#4eac31',
     skills: [
       {
         id: 1,
@@ -1561,7 +1561,7 @@ export const skillsConst: SkillParent[] = [
   {
     id: 3,
     label: 'Civics and Community Skills',
-    listColor: '#c73930',
+    backgroundColor: '#c73930',
     skills: [
       {
         id: 1,
@@ -1659,7 +1659,7 @@ export const skillsConst: SkillParent[] = [
   {
     id: 4,
     label: 'Creative Skills',
-    listColor: 'goldenrod',
+    backgroundColor: 'goldenrod',
     skills: [
       {
         id: 1,
@@ -1743,7 +1743,7 @@ export const skillsConst: SkillParent[] = [
   {
     id: 5,
     label: 'Life Skills',
-    listColor: '#416aed',
+    backgroundColor: '#416aed',
     skills: [
       {
         id: 1,
