@@ -1,8 +1,19 @@
+a {
+  display: flex;
+  justify-content: center;
+}
+
 a:hover {
     cursor: pointer;
   }
+
   img {
     margin-right: 10px;
+    min-width: 25px;
+  }
+
+  h5 {
+    margin: 0;
   }
   
   .list-group {
@@ -24,4 +35,72 @@ a:hover {
     padding: 0px;
   }
 
-  
+
+  #name-progress {
+    display: flex;
+    flex-shrink: inherit;
+    max-width: 800px;
+    justify-content: center;
+  }
+
+  #logo-name {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    /* justify-content: left; */
+  }
+
+  #progress-circles {
+    display: flex;
+    flex-direction: row;
+  justify-content: center;  
+}
+
+@media screen and (max-width: 525px) {
+  #name-progress {
+    flex-direction: column;
+  }
+}
+
+    .progress {
+    width: 50px;
+    height: 50px !important;
+    background: none;
+    position: relative;
+  }
+    
+  .progress .progress-right .progress-bar {
+    left: -100%;
+  }
+
+  .progress .progress-value {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #fff;
+    line-height: 45px;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 6%;
+  }
+
+  #outdoor {
+    background: #4eac31;
+  }
+  #civics {
+    background: #c73930;
+  }
+  #creative {
+    background: goldenrod;
+  }
+  #life {
+    background: #416aed;
+  }
+  #comprehensive {
+    background: rgb(35, 58, 42);
+  }
+
+
+ 

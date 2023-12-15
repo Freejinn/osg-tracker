@@ -1,18 +1,44 @@
-  <div ngbDropdown>
+<div ngbDropdown>
   <div class="list-group">
     <a class="list-group-item clearfix" ngbDropdownToggle>
-      <div class="d-flex align-items-center" style="display: flex">
-        <img
-          src="assets/images/osg-logo.png"
-          alt="OSG Logo"
-          class="img-responsive col-2"
-          style="max-width: 40px"
-        />
-        <h5 class="col-2" style="color: #3f383f">Scout Name</h5>
+        
+      <div class="col-12" id="name-progress">
+      <div id="logo-name">
+          <!-- <img
+            src="assets/images/osg-logo.png"
+            alt="OSG Logo"
+            class="img-responsive col-2"
+            style="max-width: 40px"
+          /> -->
+          <h5 class="col-2" style="color: #3f383f">Scout Name</h5>
+        </div>
+        
+        <div id="progress-circles" >
+          <div class="progress">
+            <div class="progress-value" id="outdoor">90%</div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-value" id="civics">90%</div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-value" id="creative">90%</div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-value" id="life">90%</div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-value" id="comprehensive">90%</div>
+          </div>
+        </div>
       </div>
     </a>
+    
     <div class="col-12" ngbDropdownMenu>
-        <app-scout-progress></app-scout-progress>
+      <app-scout-progress></app-scout-progress>
     </div>
   </div>
 </div>

@@ -19,11 +19,10 @@ h1 {
 h4 {
   color: #3f383f;
   text-align: center;
-  text-decoration: underline;
 }
 
 a {
-  margin: 20px;
+  margin: 2px;
   color: #3f383f;
   text-decoration: none;
 }
@@ -51,6 +50,7 @@ img {
 .container {
   justify-content: center;
   max-width: 800px;
+  padding: 10px;
 }
 
 .handbooks {

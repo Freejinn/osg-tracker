@@ -1,17 +1,17 @@
 <div ngbDropdown >
   <div class="list-group">
-    <a class="list-group-item clearfix" 
-    (click)="onSelected()"
+    <a class="list-group-item clearfix"
+    (click)="selectBadge(skill)"
     ngbDropdownToggle>
       <div class="d-flex align-items-center" style="display: flex;">
         <img
-          [src]="skills.imgPath"
-          alt="{{ skills.name }}"
+          [src]="skill.imgPath"
+          alt="{{skill.label}}"
           class="img-responsive col-2"
           style="max-width: 40px"
         />
-        <h5 class="col-2" style="color:  #3f383f
-        ;"> {{ skills.name }}</h5>
+        <h5 class="col-2" style="color:  #3f383f;"
+        > {{skill.label}}</h5>
       
       <div class="yourProgress">
         <p>Progress</p>
@@ -21,8 +21,8 @@
         <div
           class="progress-bar"
           role="progress-bar"
-          style="align-items: end;"
-          aria-valuenow=""
+          [style.width]="percentage|percent" 
+          [attr.aria-valuenow] = "percentage * 100"
           aria-valuemin="0"
           aria-valuemax="100"
         >
@@ -31,8 +31,12 @@
       </div>
     </div>
     </a>
-    <div class="col-11" ngbDropdownMenu>
-    <app-skill-details></app-skill-details>
+    <div class="col-11" 
+    ngbDropdownMenu>
+    <app-skill-details
+    [parts]="skill?.parts"
+    (skillSelected)="updateSelectStatus($event); updateProgPercent(skill)"
+    ></app-skill-details>
   </div>
   </div>
 </div>

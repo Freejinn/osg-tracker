@@ -24,7 +24,7 @@ img {
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: end;
+  align-items: flex-end;
 }
 
 p {
@@ -42,4 +42,5 @@ p {
   color:  #3f383f;
   border-radius: 0;
 }
+
 

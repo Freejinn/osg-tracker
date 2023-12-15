@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Skill } from '../models/skill.model';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { PathfinderListService } from './pathfinder-list.service';
+import { Observable, tap } from 'rxjs';
+
+import { SkillParent, SkillParts, SkillBadge } from '../models/skill.model';
+
 
 @Component({
   selector: 'app-master-list',
@@ -9,20 +12,32 @@ import { PathfinderListService } from './pathfinder-list.service';
   providers: [PathfinderListService]
 })
 
-export class MasterListComponent implements OnInit {
-  genSkills: Skill[];
-  outdoorSkills: Skill[];
-  civicSkills: Skill[];
-  creativeSkills: Skill[];
-  lifeSkills: Skill[];
+export class MasterListComponent {
+  skillParts: number;
 
-  constructor(private skillsListService: PathfinderListService ) {};
+  listService = inject(PathfinderListService);  
 
-  ngOnInit() {
-    this.genSkills = this.skillsListService.getGenSkills();
-    this.outdoorSkills = this.skillsListService.getOutdoorSkills();
-    this.civicSkills = this.skillsListService.getCivicSkills();
-    this.creativeSkills = this.skillsListService.getCreativeSkills();
-    this.lifeSkills = this.skillsListService.getLifeSkills();
+  skillParentList$: Observable<SkillParent[]> = 
+  this.listService.getList().pipe(tap(res => console.log('res', res)));
+  //This creates property that retrieves the list from service.
+  //In html, this prop is used to loop through the parent categories
+  //and, in the dropdown, to loop through the different skills.
+  //Also, this nifty console log outputs the data from parent list. 
+  //All looks good.
+
+
+  // onBadgeSelected(skill: SkillBadge) {
+  //   this.skillParts = skill.parts.length;
+  //   console.log(this.skillParts);
+  // }
+
+  onSkillsSelected() {
+    
   }
+
+  
+
+  
 }
+
+
