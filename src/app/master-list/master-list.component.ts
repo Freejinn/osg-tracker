@@ -1,8 +1,8 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PathfinderListService } from './pathfinder-list.service';
 import { Observable, tap } from 'rxjs';
 
-import { SkillParent, SkillParts, SkillBadge } from '../models/skill.model';
+import { SkillParent } from '../models/skill.model';
 
 
 @Component({
