@@ -13,7 +13,7 @@ import { ScoutTroopComponent } from './scout-troop/scout-troop.component';
 import { ScoutProgressComponent } from './scout-troop/scout-progress/scout-progress.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReversePipe } from './reverse.pipe';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
