@@ -2,22 +2,17 @@ import { Injectable, Input, EventEmitter, inject } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { SkillParent, SkillBadge, SkillParts } from '../models/skill.model';
-import { skillsConst } from '../../assets/Constants/skills.const'
+import { skillsConst } from '../../assets/Constants/skills.const';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class PathfinderListService {
   http = inject(HttpClient);
-// @Input() badgeSelected: EventEmitter<SkillBadge>;
+  // @Input() badgeSelected: EventEmitter<SkillBadge>;
 
   getList(): Observable<SkillParent[]> {
-    return this.http.get();
+    return this.http.get<SkillParent[]>('http://localhost:3300/skills');
   }
-    
 }
-
-
-
-  
 
 //   private genSkills: SkillParent[] = [
 //     new Skill('assets/images/tenderfoot-badge.jpg', 'Tenderfoot', {
@@ -492,8 +487,8 @@ export class PathfinderListService {
 //         "H: Presentation": "Make a presentation to your patrol discussing at least ONE of the projects, including explanations of why you chose it and what you learned.",
 //       }
 //     ),
-//     new Skill('assets/images/conservationist-badge.png', 
-//     'Conservationist', 
+//     new Skill('assets/images/conservationist-badge.png',
+//     'Conservationist',
 //     {
 //       "A: Carbon Footprint": "Learn what a carbon footprint is, and calculate what your family’s carbon footprint is right now. State THREE ways to reduce your carbon footprint. ",
 //       "B: Recycling": "Learn about what is and isn’t recycled at your local recycling center. List 10 items that people think get recycled but really don’t. Explain why this is a problem.",
@@ -505,15 +500,15 @@ export class PathfinderListService {
 //       "H: Electronic Recycling": "Learn how personal electronic devices, like cell phones, are recycled.",
 //       "I: Leave No Trace": "State what “Leave No Trace” means and demonstrate the concept at a patrol event.",
 //     }),
-//     new Skill('assets/images/debater-badge.png', 'Debater', 
+//     new Skill('assets/images/debater-badge.png', 'Debater',
 //     {
 //       "A: Debate vs. Argument": "Explain to your Examiner the difference between a debate and an argument",
 //       "B: Analyze a Debate": "Do ONE of the following: A) Watch a debate between candidates for any elected office, and then discuss with your Examiner whether the candidates were or were not persuasive. Did the candidates find common ground on any issues? What did you learn from the debate that you hadn’t previously considered? B) Look up a famous debate in history, such as the 1858 campaign debates between Abraham Lincoln and Stephen Douglas or the 1985 debate about apartheid between Jesse Jackson and Jerry Falwell. State why that debate was important. Discuss with your Examiner who was considered the winner and why they won. What changes occurred because of the debate? Did the debaters on the topic find any common ground? ",
 //       "C: Important Components of a Debate": "Have a discussion with your Examiner about what you consider to be the most important components of a debate. Include discussion of how one prepares for a debate and methods for acknowledging another’s point of view with respect but without necessarily agreeing with them.",
 //       "D: Participate in a Debate": "Participate in a debate, either in school or by organizing one within your patrol or troop (or other setting approved by your Examiner). The topic(s) may be of relatively small importance (e.g., “Which is better, cats or dogs?”). As part of the debate experience, present both sides of at least one argument yourself. For example, during one round you express why cats are better, and on the next round you convince your audience dogs are better. Explain to your Examiner what rules were in place for the debate and how those rules were enforced. How long were participants given? Were rebuttals an option? How were the questions decided?",
-      
+
 //     }),
-//     new Skill('assets/images/firefighter-badge.png', 'Firefighter', 
+//     new Skill('assets/images/firefighter-badge.png', 'Firefighter',
 //     {
 //       "A: Your Local Fire Department": "Explain how your local fire department works. Consider the following questions: A) Is firefighting volunteer or a career? B) Is the fire department staffed 24 hours a day? C) How many stations are in your town where you live? Where is the closest station to your house? D) How does the fire department get activated in your town?",
 //       "B: Combustion and The Fire Triangle": "Explain the process of combustion and the fire triangle. A) Know the effects of smoke and heat and how to act in smoke. B) Know the dangers involved, and understand the fire precautions necessary, in the home, with respect to the following: 1) Electric wiring, 2) Appliances and fuses, 3) Oil and solid fuel heaters, 4) Candles, 5) Party decorations, 6) Propane tanks.",
@@ -589,30 +584,30 @@ export class PathfinderListService {
 //       'G: Architect and Engineers at Work':
 //         'Be able to discuss what types of renovation or construction work in your area require the involvement of an architect or engineer, and why those professionals are required.',
 //     }),
-//     new Skill('assets/images/basket-badge.png', 'Basket Worker', 
+//     new Skill('assets/images/basket-badge.png', 'Basket Worker',
 //     {
 //       "A: Usable Raw Materials": "Have a general knowledge of the raw materials that may be used to create baskets or other woven items of practical use.",
 //       "B: How to Find and Prepare Materials": "Know where the raw material is obtained and how it is prepared for working.",
 //       "C: Produce an Item": "Produce an article of practical use in either basket, cane, rush, or straw work, made entirely on your own. This could include weaving the cane seat for a chair, for example, without building the chair itself. The project should be approved by your Examiner prior to beginning.",
 //     }),
-//     new Skill('assets/images/dancer-badge.png', 'Dancer', 
+//     new Skill('assets/images/dancer-badge.png', 'Dancer',
 //     {
 //       "A: Traditional Dance": "Learn ONE of EACH of the following groups of dances: A) A line dance: The Electric Slide, the Boot Scoot Boogie, the Macarena, or a similar dance. B) The Twist, the Mashed Potato, or the Swim. C) A square dance or folk dance of any culture.",
 //     "B: Culture of Dance": "Speak with your Examiner about the cultural power of dance.",
 //     "C: Modern Dance": "Learn three modern dances, and demonstrate them to your group or your Examiner (however you are comfortable).",
 //     }),
-//     new Skill('assets/images/drummer-badge.png', 'Drummer', 
+//     new Skill('assets/images/drummer-badge.png', 'Drummer',
 //     {
 //       "A: Drum Rudients": "Perform EACH of the following rudiments with drum sticks (on a drum or drum pad) or with a hand drum: A) Single stroke roll, B) Double stroke roll, C) Flam, both right and left hand, D) Single paradiddle, E) Single dragadiddle, F) Five stroke roll, G) Seven stroke roll",
 //       "B: Perform": "Play along with a simple song or chant for your patrol.",
 //     }),
-//     new Skill('assets/images/entertainer-badge.png', 'Entertainer', 
+//     new Skill('assets/images/entertainer-badge.png', 'Entertainer',
 //     {
 //       "A: Develop a Performance": "Develop material for public performance, doing ONE of the following: A) Write original material for performance. B) Find material written by others that could be performed or adapted for performance.",
 //       "B: Reherse": "Practice your material prior to performance. Explain to your Examiner what you learned during rehearsal and how it improved your final performance.",
 //       "C: Perform": "Perform in front of audiences at least TWO times for new material you have written or helped write or at least FOUR times for pre-existing material or material written by someone other than yourself.",
 //     }),
-//     new Skill('assets/images/filmmaker-badge.png', 'Filmmaker', 
+//     new Skill('assets/images/filmmaker-badge.png', 'Filmmaker',
 //     {
 //       "A: Create a Short Film": "Create a short film, at least 5 minutes in length. Your film can be educational or purely entertaining. The film should showcase your understanding of the techniques required to produce an enjoyable program, including the following: A) Sound, B) Editing, C) Pan and zoom, D) Voice-over, E) Title screen, F) Credits screen ",
 //       "B: Lighting": "Explain direct and indirect lighting and how each can be used to highlight a subject for effect.",
@@ -622,7 +617,7 @@ export class PathfinderListService {
 //       "F: Upload Film": "Upload your film to a platform where your patrol and your scout leader can view it, and let them watch your film.",
 //       "G: Copyright": "Be able to discuss copyright issues relating to your own work as well as to the photos, music, and videos created by other artists.",
 //   }),
-//     new Skill('assets/images/musician-badge.png', 'Musician', 
+//     new Skill('assets/images/musician-badge.png', 'Musician',
 //     {
 //       "A: Play/Sing a Scale": "Play or sing a scale and know its composition.",
 //       "B: Write a Scale": "Write a scale in either the treble clef, bass clef, or other appropriate notation system.",
@@ -635,7 +630,7 @@ export class PathfinderListService {
 //       "I: Sight Read": "Sight read (vocally or instrumentally) a moderately difficult piece chosen by your Examiner. Explain all signs and terms in the notation.",
 //       "J: Types of Instruments": "Name the following: A) At least THREE instruments in a traditional western orchestra, B) At least THREE instruments that might appear in a rock or country band, C) At least SIX instruments found in any style of music performance outside of the western tradition",
 //   }),
-//     new Skill('assets/images/paracordist-badge.png', 'Paracordist', 
+//     new Skill('assets/images/paracordist-badge.png', 'Paracordist',
 //     {
 //       "A: Make 3": "Make at least THREE of the following items with paracord. Use at least TWO colors in one of your projects. A) Bracelet, B) Necklace, C) Water bottle holder that attaches to your pack or gear, D) A decorative knot/design for use as an ornament or key chain, E) A useful item, such as a sling, hammock, or bag",
 //       "B: 5 Uses": "Be able to state FIVE things a scout could use paracord for while camping or in an emergency.",
@@ -701,8 +696,8 @@ export class PathfinderListService {
 //       'G: Take Part in Organized Sport':
 //         'Take part as a member of an organized sport for at least 2 seasons. During your participation, track your performance, and be able to share how you have made significant improvement in your performance over that time.',
 //     }),
-//     new Skill('assets/images/beekeeper-badge.png', 
-//     'Beekeeper', 
+//     new Skill('assets/images/beekeeper-badge.png',
+//     'Beekeeper',
 //     {
 //       "A: First Aid and Safety": "Know the first aid treatment for bee stings. Explain the protective gear most beekeepers use and why they use it. ",
 //       "B: A Swarm": "What constitutes a swarm of bees? How do they live?",
@@ -711,8 +706,8 @@ export class PathfinderListService {
 //       "E: Bee Keeping": "Have practical knowledge of bee keeping, and provide a statement from a beekeeper stating you assisted in the following: A) Hiving a swarm, B) Examining a colony, C) Removing the comb, D) Finding the queen, E) Putting foundation in sections, F) Filling and removing supers, G) Preparing honey in comb and strained for market",
 //       "F: Flowers": "Know which flowers afford the best food for bees and how honey varies in both color and flavor according to the flowers",
 //     }),
-//     new Skill('assets/images/canner-badge.png', 
-//     'Canner', 
+//     new Skill('assets/images/canner-badge.png',
+//     'Canner',
 //     {
 //       "A: Canning Safety": "Explain the essential sterilization and storage rules for canning safety.",
 //       "B: Submit Specimens": "Submit TWO of the following specimens of canning work: A) Three pints of freezer-packed vegetables, single or mixed, B) Three jars of preserved fruit (at least two kinds), C) Three glasses of jelly, jam, or marmalade",
@@ -725,8 +720,8 @@ export class PathfinderListService {
 //       "I: Storing": "What should be done to all jars, tumblers, etc., before storing? How are canned goods best stored?",
 //       "J: Fermentation": "Discuss basic fermentation principles for items, such as pickles or sauerkraut. How does fermentation preserve food? Be able to discuss the roles of yeast, bacteria, alcohol, sugar, and decomposition.",
 //     }),
-//     new Skill('assets/images/chicken_farmer-badge.png', 
-//     'Chicken Farmer', 
+//     new Skill('assets/images/chicken_farmer-badge.png',
+//     'Chicken Farmer',
 //     {
 //       "A: A Chicken's Life": "Know the life cycle of a chicken. Hatch chicks with an incubator, if possible.",
 //       "B: Chicken Breeds": "Know the difference between at least FOUR breeds of hen, and know which breeds are layers and which are broilers.",
@@ -735,8 +730,8 @@ export class PathfinderListService {
 //       "E: Cooking Eggs": "Be able to cook eggs FOUR ways.",
 //       "F: Make Something for Your Chickens": "Build or create something for the well-being of your chickens. This could be a coop, feed dispenser, ramp, pen, or other item that helps your chickens be happy and safe.",
 //     }),
-//     new Skill('assets/images/collector-badge.png', 
-//     'Collector', 
+//     new Skill('assets/images/collector-badge.png',
+//     'Collector',
 //     {
 //       "A: Build Up a Collection": "Over a period of 6 months, make or add to a collection of stamps, fossils, coins, matchbox labels, or something else of your choosing. Organize your collection and display it to your patrol.",
 //       "B: Origin of Your Collection": "When displaying the collection for your patrol, explain how you became interested in collecting these items, and be able to describe the origin of items in your collection.",
@@ -744,8 +739,8 @@ export class PathfinderListService {
 //       "D: Displaying Your Collection": "Know about correct methods of displaying your collection. Why are these methods important?",
 //       "E: History of Collecting": "Know the history of collections similar to yours. For example, if you collect stamps, be prepared to discuss the history of philately.",
 //     }),
-//     new Skill('assets/images/equestrian-badge.png', 
-//     'Equestrian', 
+//     new Skill('assets/images/equestrian-badge.png',
+//     'Equestrian',
 //     {
 //       "A: Dress": "Demonstrate that you know how to dress safely for riding.",
 //       "B: Safety": "Know the safety rules for approaching and catching a horse.",
@@ -758,8 +753,8 @@ export class PathfinderListService {
 //       "I: Different Bridles and Saddles": "Explain TWO different kinds of saddle and bridle and the advantages and disadvantages of each.",
 //       "J: Types of Horses and Ponies": "Be able to identify at least FIVE different kinds of horses or ponies.",
 //     }),
-//     new Skill('assets/images/forester-badge.png', 
-//     'Forester', 
+//     new Skill('assets/images/forester-badge.png',
+//     'Forester',
 //     {
 //       "A: Native Species": "Identify the principal native tree species in your own locality, and explain its principal distinguishing characteristics.",
 //       "B: Shrubs": "Identify FIVE kinds of shrubs.",
@@ -772,8 +767,8 @@ export class PathfinderListService {
 //       "I: Globalization and Forestry": "Express the impact of globalization on forestry and the history of forestry in your area.",
 //       "J: Education for Employment": "Learn, and be able to discuss, what kind of education is needed to become a forester, arborist, millwright, or forest ranger.",
 //     }),
-//     new Skill('assets/images/gardener-badge.png', 
-//     'Gardener', 
+//     new Skill('assets/images/gardener-badge.png',
+//     'Gardener',
 //     {
 //       "A: Preparing a Plot": "Double dig a piece of ground at least 12 square feet, or prepare an equivalent container garden.",
 //       "B: Grow Vegetables": "Plant and successfully grow FOUR kinds of vegetables or flowers from seeds or cuttings.",
@@ -784,8 +779,8 @@ export class PathfinderListService {
 //       "G: Fungal Control": "Be able to suggest methods for fungal control.",
 //       "H: Organic vs Industrial Gardening": "Describe the difference between organic and industrial gardening.",
 //     }),
-//     new Skill('assets/images/geologist-badge.png', 
-//     'Geologist', 
+//     new Skill('assets/images/geologist-badge.png',
+//     'Geologist',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -796,8 +791,8 @@ export class PathfinderListService {
 //       "G: ": "",
 //       "H: ": "",
 //     }),
-//     new Skill('assets/images/homemaker-badge.png', 
-//     'Homemaker', 
+//     new Skill('assets/images/homemaker-badge.png',
+//     'Homemaker',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -808,8 +803,8 @@ export class PathfinderListService {
 //       "G: ": "",
 //       "H: ": "",
 //     }),
-//     new Skill('assets/images/hospitality-badge.png', 
-//     'Hospitality', 
+//     new Skill('assets/images/hospitality-badge.png',
+//     'Hospitality',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -820,8 +815,8 @@ export class PathfinderListService {
 //       "G: ": "",
 //       "H: ": "",
 //     }),
-//     new Skill('assets/images/housewright-badge.png', 
-//     'Housewright', 
+//     new Skill('assets/images/housewright-badge.png',
+//     'Housewright',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -832,8 +827,8 @@ export class PathfinderListService {
 //       "G: ": "",
 //       "H: ": "",
 //     }),
-//     new Skill('assets/images/journalist-badge.png', 
-//     'Journalist', 
+//     new Skill('assets/images/journalist-badge.png',
+//     'Journalist',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -844,8 +839,8 @@ export class PathfinderListService {
 //       "G: ": "",
 //       "H: ": "",
 //     }),
-//     new Skill('assets/images/martial_artist-badge.png', 
-//     'Martial Artist', 
+//     new Skill('assets/images/martial_artist-badge.png',
+//     'Martial Artist',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -856,8 +851,8 @@ export class PathfinderListService {
 //       "G: ": "",
 //       "H: ": "",
 //     }),
-//     new Skill('assets/images/meteorologist-badge.png', 
-//     'Meteorologist', 
+//     new Skill('assets/images/meteorologist-badge.png',
+//     'Meteorologist',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -882,8 +877,8 @@ export class PathfinderListService {
 //       "H: ": "",
 //       }
 //     ),
-//     new Skill('assets/images/reader-badge.jpg', 
-//     'Reader', 
+//     new Skill('assets/images/reader-badge.jpg',
+//     'Reader',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -894,8 +889,8 @@ export class PathfinderListService {
 //       "G: ": "",
 //       "H: ": "",
 //     }),
-//     new Skill('assets/images/sharpshooter-badge.png', 
-//     'Sharpshooter', 
+//     new Skill('assets/images/sharpshooter-badge.png',
+//     'Sharpshooter',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -906,8 +901,8 @@ export class PathfinderListService {
 //       "G: ": "",
 //       "H: ": "",
 //     }),
-//     new Skill('assets/images/signaler-badge.png', 
-//     'Signaler', 
+//     new Skill('assets/images/signaler-badge.png',
+//     'Signaler',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -918,8 +913,8 @@ export class PathfinderListService {
 //       "G: ": "",
 //       "H: ": "",
 //     }),
-//     new Skill('assets/images/swimmer-badge.png', 
-//     'Swimmer', 
+//     new Skill('assets/images/swimmer-badge.png',
+//     'Swimmer',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -930,8 +925,8 @@ export class PathfinderListService {
 //       "G: ": "",
 //       "H: ": "",
 //     }),
-//     new Skill('assets/images/tailor-badge.png', 
-//     'Tailor', 
+//     new Skill('assets/images/tailor-badge.png',
+//     'Tailor',
 //     {
 //       "A: ": "",
 //       "B: ": "",
@@ -942,8 +937,8 @@ export class PathfinderListService {
 //       "G: ": "",
 //       "H: ": "",
 //     }),
-//     new Skill('assets/images/zoologist-badge.png', 
-//     'Zoologist', 
+//     new Skill('assets/images/zoologist-badge.png',
+//     'Zoologist',
 //     {
 //       "A: ": "",
 //       "B: ": "",

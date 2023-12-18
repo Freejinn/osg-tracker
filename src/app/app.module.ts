@@ -13,6 +13,7 @@ import { ScoutTroopComponent } from './scout-troop/scout-troop.component';
 import { ScoutProgressComponent } from './scout-troop/scout-progress/scout-progress.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReversePipe } from './reverse.pipe';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,14 +26,10 @@ import { ReversePipe } from './reverse.pipe';
     ScoutTroopComponent,
     ScoutProgressComponent,
     FooterComponent,
-    ReversePipe
+    ReversePipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
