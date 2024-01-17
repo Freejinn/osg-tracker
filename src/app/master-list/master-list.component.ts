@@ -18,16 +18,6 @@ export class MasterListComponent {
     .getList()
     .pipe(tap((res) => console.log('res', res)));
   
-    //This creates property that retrieves the list from service.
-  //In html, this prop is used to loop through the parent categories
-  //and, in the dropdown, to loop through the different skills.
-  //Also, this nifty console log outputs the data from parent list.
-  //All looks good.
-
-  // onBadgeSelected(skill: SkillBadge) {
-  //   this.skillParts = skill.parts.length;
-  //   console.log(this.skillParts);
-  // }
 
   onSkillsSelected() {}
 }
