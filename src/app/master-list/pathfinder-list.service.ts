@@ -5,11 +5,12 @@ import { SkillParent } from '../models/skill.model';
 
 @Injectable({ providedIn: 'root' })
 export class PathfinderListService {
+  
   http = inject(HttpClient);
-// @Input() badgeSelected: EventEmitter<SkillBadge>;
 
-  // getList(): Observable<SkillParent[]> {
-    // return this.http.get();
-  // }
-    
+  getList(): Observable<SkillParent[]> {
+    return this.http.get<SkillParent[]>('http://localhost:3300/skills');
+  }
+    // @Input() badgeSelected: EventEmitter<SkillBadge>;
+
 }
