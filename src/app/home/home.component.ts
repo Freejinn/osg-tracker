@@ -12,20 +12,23 @@ export class HomeComponent {
      url: 'https://docs.guides4guides.org/Timberwolves/Handbook_TWv7_WEB.pdf',
      altSup: '',
      altLink: '',
-     route: ''
+     route: '',
+     color: 'goldenrod'
     },
     {group: 'Pathfinder',
-     url: "https://outdoorserviceguides.org/pdf/BPSA-US-Pathfinder-Handbook.pdf",
-     altSup: '2022 Updated Proficiency Badges',
+     url: "https://docs.guides4guides.org/Pathfinders/OSG+Pathfinder+Handbook.pdf",
+     altSup: '2022 Proficiency Badges',
      altLink: "https://docs.guides4guides.org/Pathfinders/Pathfinder-Handbook-Preview-June-2022.pdf",
-     route: '/master-list'
+     route: '/master-list',
+     color: '#416aed'
     
     },
     {group: 'Rover',
      url: "https://outdoorserviceguides.org/pdf/BPSA-US_Rover_Handbook.pdf",
      altSup: 'Rover Badge Supplement',
      altLink: "https://docs.guides4guides.org/Rovers/Rover+Badge+Supplement.pdf",
-     route: ''
+     route: '',
+      color: 'rgb(35, 58, 42)'
     },
 
   ]

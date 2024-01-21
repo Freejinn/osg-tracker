@@ -8,6 +8,7 @@ import { SkillBadge, SkillParts } from 'src/app/models/skill.model';
   styleUrls: ['./skills.component.css'],
 })
 export class SkillsComponent {
+
   @Input() skill: SkillBadge;
   @Input() parts: SkillParts[] = [];
   badge: SkillBadge[] = [];

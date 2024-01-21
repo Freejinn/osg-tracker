@@ -1,0 +1,18 @@
+.container-fluid {
+    display: flex;
+    justify-content: left;
+    background-color: #64815a;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+img {
+ margin: 20px;
+ text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
