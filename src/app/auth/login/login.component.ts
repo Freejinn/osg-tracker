@@ -26,7 +26,7 @@ export class LoginComponent {
     osgGroup: new FormControl(''),
   });
 
-  onLogin() {
+  login() {
 
     const val = this.loginForm.value;
     this.auth.login(val.userName, val.password, val.osgGroup).userList$
@@ -39,8 +39,8 @@ export class LoginComponent {
     )
     .subscribe({
       next: noop,
-      error: () => alert('Login Failed'),
+      error: () => alert('Login Failed')
     });
-    
+
   }
 }

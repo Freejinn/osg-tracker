@@ -15,6 +15,8 @@ import { AuthModule } from './auth/auth.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MasterListModule } from './master-list/master-list.module';
+import { EffectsModule } from '@ngrx/effects';
+import { metaReducers, reducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -33,8 +35,11 @@ import { MasterListModule } from './master-list/master-list.module';
     HttpClientModule, 
     MasterListModule,
     AuthModule, 
-    StoreModule.forRoot({}, {}), 
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })],
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }), 
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), 
+    EffectsModule.forRoot([])],
   providers: [],
   bootstrap: [AppComponent],
 })
