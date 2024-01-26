@@ -1,6 +1,6 @@
   
   <section>
-    <ng-container *ngFor="let skillParent of skillParentList$ | async">
+    <ng-container *ngFor="let skillParent of skillParentList$ | async ">
       <div ngbDropdown id="skill-container">
         <button class="btn col-12 text-light"
         [ngStyle]="{'background-color': skillParent?.backgroundColor}"

@@ -20,6 +20,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div
       class="collapse navbar-collapse justify-content-end"
       id="navbarSupportedContent"
@@ -38,39 +39,17 @@
           >
         </li>
 
-        <li class="nav-item dropdown" ngbDropdown>
-          <a href="#" class="nav-link dropdown-toggle" ngbDropdownToggle>
-            Scout Skills
-          </a>
-          <div
-            class="dropdown-menu"
-            aria-labelledby="navbarDropdown"
-            ngbDropdownMenu
+        <li class="nav-item">
+          <a
+            routerLink="/login"
+            class="nav-link"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            >Scout Login</a
           >
-            <a
-              class="dropdown-item"
-              href="#"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              >Timberwolf Skills</a
-            >
-            <a
-              class="dropdown-item"
-              routerLink="/master-list"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              >Pathfinder Skills</a
-            >
-            <a
-              class="dropdown-item"
-              href="#"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              >Rover Skills</a
-            >
-          </div>
         </li>
-
         <li class="nav-item">
           <a
             routerLink="/scout-troop"

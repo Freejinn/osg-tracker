@@ -8,6 +8,7 @@ import { SkillBadge, SkillParts } from 'src/app/models/skill.model';
   styleUrls: ['./skills.component.css'],
 })
 export class SkillsComponent {
+
   @Input() skill: SkillBadge;
   @Input() parts: SkillParts[] = [];
   badge: SkillBadge[] = [];
@@ -17,38 +18,28 @@ export class SkillsComponent {
   trueParts: number;
   percentage: number;
 
-  // call selector to check state
-  // if undefined
-  // call service to fetch data
-
   updateSelectStatus(part: SkillParts) {
     let index = this.parts.indexOf(part);
     part.selected = !part.selected ? true : false;
     this.parts[index] = part;
 
-    part.selected.valueOf() == true ?
-    this.selectedParts.push(part.selected) :
-    this.selectedParts.pop();
+    part.selected.valueOf() == true
+      ? this.selectedParts.push(part.selected)
+      : this.selectedParts.pop();
     this.trueParts = this.selectedParts.length;
     console.log(this.trueParts);
   }
-    
-selectBadge(skill: SkillBadge) {
-  this.totalParts = skill.parts.length;
-  console.log(this.totalParts);
+
+  selectBadge(skill: SkillBadge) {
+    this.totalParts = skill.parts.length;
+    console.log(this.totalParts);
+  }
+
+  updateProgPercent(percent: SkillBadge) {
+    let index = this.badge.indexOf(percent);
+    percent.progressPercentage = this.trueParts / this.totalParts;
+    this.badge[index] = percent;
+    this.percentage = percent.progressPercentage;
+    console.log(this.percentage);
+  }
 }
-  
-updateProgPercent(percent: SkillBadge) {
-  let index = this.badge.indexOf(percent);
-  percent.progressPercentage = ((this.trueParts/this.totalParts));
-  this.badge[index] = percent;
-  this.percentage = percent.progressPercentage
-  console.log(this.percentage);
-  
-}
-
-//from html progress bar div: style="align-items: end"
-
-
-}
-

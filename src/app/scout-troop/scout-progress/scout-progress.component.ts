@@ -16,8 +16,8 @@ export class ScoutProgressComponent implements OnInit {
   constructor(private skillsListService: PathfinderListService ) {};
 
 
-  ngOnInit(): void {
-    this.genSkills = this.skillsListService.getList();
+  ngOnInit() {
+    // this.genSkills = this.skillsListService.getList();
   }
 
 }

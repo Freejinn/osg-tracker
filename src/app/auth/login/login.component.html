@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">OSG Scout Login</div>
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="user-name">User Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="user-name"
+            formControlName="userName"/>
+        </div>
+        <div class="form-group">
+          <label for="password-input">Password</label>
+          <input type="password" class="form-control" id="password-input" 
+          formControlName="password"/>
+        </div>
+        <div class="form-group">
+            <label for="group-select">OSG Group</label>
+            <select 
+                class="form-control" 
+                id="group-select"
+                formControlName="osgGroup">
+              <option>100th Sun Mountain</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <br>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

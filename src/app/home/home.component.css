@@ -1,34 +1,35 @@
 p {
   margin: 15px;
   font-size: 18px;
-  color: #3f383f;
-  max-width: 800px;
+  /* color: #3f383f; */
+  color:white;
+  max-width: 1000px;
 }
 
 #paragraph {
   display: flex;
   justify-content: center;
+  background-color: #64815a;
+
 }
 
 h1 {
   text-align: center;
   color: #64815a;
-  padding: 10px;
-}
-
-h4 {
-  color: #3f383f;
-  text-align: center;
 }
 
 a {
   margin: 2px;
   color: #3f383f;
-  text-decoration: none;
+  font-size: 16px;
 }
 
 a:hover {
-  color: #64815a;
+  color: #3f383f;
+  font-weight: bold;
+}
+
+#login-link {
   font-weight: bold;
 }
 
@@ -48,9 +49,9 @@ img {
 }
 
 .container {
+  display: flex;
   justify-content: center;
-  max-width: 800px;
-  padding: 10px;
+  padding: 0;
 }
 
 .handbooks {
@@ -58,33 +59,39 @@ img {
   justify-content: center;
 }
 
-.buttons {
+.card {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 20rem;
+  margin: 15px;
+  border-width: 2px;
+  box-shadow: 5px 2px 2px lightgrey;
 }
-.skills-btn {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
+
+.card-header {
+  color: white;
 }
 
 .btn-outline-success {
   border-color: #3f383f;
   color: #3f383f;
+  margin: 20px;
 }
 
 #button1:hover {
-  background-color: goldenrod;
+  background-color: #3f383f;
   color: white;
 }
 
-#button2:hover {
-  background-color: #64815a;
-  color: white;
-}
+@media only screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+  }
 
-#button3:hover {
-  background-color: #416aed;
-  color: white;
+  p {
+    max-width: 500px;
+  }
 }

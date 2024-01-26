@@ -1,34 +1,36 @@
-<hr />
 <h1>Welcome</h1>
 <div id="paragraph">
   <p>
-    All requirements toward learning skills and earning badges in this app
-    correspond with the official OSG Handbooks. It is still important that you
-    refer to your handbook for additional information about these skills and
-    badges.
+    Use this app to keep track of your progress toward skill mastery and badges!
+    <a id="login-link" routerLink="/login">LOGIN</a> to save your progress.
+    <br><br>
+    All badges and requirements listed here 
+    correspond with the official OSG Handbooks.
+    Refer to the handbooks - linked below - for additional information.
     <br />
   </p>
 </div>
-<hr>
 
-<div
-  id="links"
-  *ngFor="let item of scoutGroup"
-  style="display: flex; flex-direction: column"
->
-  <a href="{{ item.url }}">{{ item.group }} Handbook</a>
-  <a href="{{ item.altLink}}">{{ item.altSup }}</a>
-  <hr>
-</div>
-
-<div class="buttons">
-  <div class="skills-btn" *ngFor="let item of scoutGroup">
-    <button
-      id="button1"
-      type="button"
-      routerLink="/master-list"
-      class="btn btn-outline-success">
-      {{ item.group }} Skills List
-    </button>
+<div class="container">
+  <div class="card" id="links" *ngFor="let item of scoutGroup"
+  [style.border-color]="item.color">
+    <div class="card-header" [style.background-color]="item.color">
+      {{ item.group }}
+    </div>
+    <div class="col-10 mx-auto">
+      <button
+        id="button1"
+        type="button"
+        routerLink="{{ item.route }}"
+        class="btn btn-outline-success"
+      >
+        {{ item.group }} Skills List
+      </button>
+    </div>
+    <div class="card-footer">
+      <a href="{{ item.url }}" target="_blank">{{ item.group }} Handbook</a>
+      <br />
+      <a href="{{ item.altLink }}" target="_blank">{{ item.altSup }}</a>
+    </div>
   </div>
 </div>

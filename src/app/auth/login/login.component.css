@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 800px;
+    margin: 15px;
+    border-width: 1px;
+    box-shadow: 5px 2px 2px lightgrey;
+    border-color: #1E381D;
+  }
+
+  .card-header {
+    text-align: center;
+    background-color: #1E381D;
+    color: white;
+  }
+
+  label {
+    margin: 10px 0px;
+    color: #3f383f;
+  }
+
+  button {
+    background-color: white;
+    color: #1E381D;
+    border-color: #1E381D;
+  }
+
+  button:hover {
+    background-color: #1E381D;
+    border-color: #1E381D;
+  }
+
+  button:active:focus {
+    background-color: #1E381D;
+    border-color: #1E381D;
+  }
