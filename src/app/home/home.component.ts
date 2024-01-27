@@ -12,7 +12,7 @@ export class HomeComponent {
      url: 'https://docs.guides4guides.org/Timberwolves/Handbook_TWv7_WEB.pdf',
      altSup: '',
      altLink: '',
-     route: '',
+     route: '/master-list',
      color: 'goldenrod'
     },
     {group: 'Pathfinder',
@@ -27,7 +27,7 @@ export class HomeComponent {
      url: "https://outdoorserviceguides.org/pdf/BPSA-US_Rover_Handbook.pdf",
      altSup: 'Rover Badge Supplement',
      altLink: "https://docs.guides4guides.org/Rovers/Rover+Badge+Supplement.pdf",
-     route: '',
+     route: '/master-list',
       color: 'rgb(35, 58, 42)'
     },
 
