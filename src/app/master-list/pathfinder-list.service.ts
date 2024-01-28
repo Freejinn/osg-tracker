@@ -9,7 +9,7 @@ export class PathfinderListService {
   http = inject(HttpClient);
 
   getList(): Observable<SkillParent[]> {
-  return this.http.get<SkillParent[]>('http://localhost:3300/skills');
+  return this.http.get<SkillParent[]>('http://localhost:3000/skills');
 
   }
     // @Input() badgeSelected: EventEmitter<SkillBadge>;
