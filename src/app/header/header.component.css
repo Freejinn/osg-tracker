@@ -21,3 +21,24 @@ a {
     align-items: center;
 }
 
+.btn-container {
+    margin-left:8px;
+    /* text-align: center; */
+}
+
+button {
+    background-color: white;
+    color: #1E381D;
+    border-color: #1E381D;
+  }
+
+#log-btn:hover {
+    background-color: #64815a;
+    border-color: #1E381D;
+  }
+
+  #log-btn:active:focus {
+    background-color: #1E381D;
+    border-color: #1E381D;
+  }
+
