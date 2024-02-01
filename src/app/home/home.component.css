@@ -1,21 +1,26 @@
 p {
   margin: 15px;
-  font-size: 18px;
-  /* color: #3f383f; */
-  color:white;
-  max-width: 1000px;
+  /* font-size: 18px; */
+  color: #3f383f;
+  /* max-width: 1000px; */
+  text-align: center;
 }
 
 #paragraph {
   display: flex;
   justify-content: center;
   background-color: #64815a;
-
 }
 
 h1 {
   text-align: center;
   color: #64815a;
+}
+
+h5 {
+  color: white;
+  text-align: center;
+  padding: 10px;
 }
 
 a {
@@ -79,7 +84,29 @@ img {
   margin: 20px;
 }
 
+#btn-space {
+  text-align: center;
+}
+
+#log-btn {
+  background-color: white;
+  margin: 10px;
+}
+
 #button1:hover {
+  background-color: #3f383f;
+  color: white;
+}
+
+#btn-text {
+  color:#3f383f;
+  font-size: 14px;
+  margin:0;
+  text-align: center;
+  max-width: none;
+}
+
+#log-btn:hover {
   background-color: #3f383f;
   color: white;
 }
@@ -89,9 +116,5 @@ img {
     flex-direction: column;
     padding: 0;
     align-items: center;
-  }
-
-  p {
-    max-width: 500px;
   }
 }

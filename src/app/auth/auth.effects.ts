@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AuthActions } from './action-types';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { tap } from 'rxjs';
+import { Route, Router } from '@angular/router';
 
 @Injectable()
 export class AuthEffects {
@@ -16,5 +17,17 @@ export class AuthEffects {
     { dispatch: false }
   );
 
-  constructor(private actions$: Actions) {}
+  logout$ = createEffect (
+    ()=>
+      this.actions$.pipe(
+        ofType(AuthActions.logout),
+        tap((action)=> 
+        {localStorage.removeItem('user');
+        this.route.navigateByUrl('/home');
+        })
+      ),
+      { dispatch: false }
+  );
+
+  constructor(private actions$: Actions, private route: Router) {}
 }

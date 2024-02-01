@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/reducers';
@@ -14,16 +14,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
+
   constructor(
     private auth: AuthService,
     private store: Store<AppState>,
     private router: Router,
   ) {}
 
+    
+
   loginForm = new FormGroup({
-    userName: new FormControl(''),
-    password: new FormControl(''),
-    osgGroup: new FormControl(''),
+    userName: new FormControl('test user', [Validators.required]),
+    password: new FormControl('test password', [Validators.required]),
+    osgGroup: new FormControl('100th Sun Mountain'),
   });
 
   login() {

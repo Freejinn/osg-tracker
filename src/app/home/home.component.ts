@@ -1,18 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppState } from '../reducers';
+import { Observable, pipe } from 'rxjs';
+import { Store, select } from '@ngrx/store';
+import { isLoggedIn, isLoggedOut } from '../auth/auth.selectors';
+import { logout } from '../auth/auth.actions';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   scoutGroup = [
     {group: 'Timberwolf',
      url: 'https://docs.guides4guides.org/Timberwolves/Handbook_TWv7_WEB.pdf',
      altSup: '',
      altLink: '',
-     route: '/master-list',
+     route: '/home',
      color: 'goldenrod'
     },
     {group: 'Pathfinder',
@@ -27,13 +32,29 @@ export class HomeComponent {
      url: "https://outdoorserviceguides.org/pdf/BPSA-US_Rover_Handbook.pdf",
      altSup: 'Rover Badge Supplement',
      altLink: "https://docs.guides4guides.org/Rovers/Rover+Badge+Supplement.pdf",
-     route: '/master-list',
+     route: '/home',
       color: 'rgb(35, 58, 42)'
     },
 
   ]
 
-  constructor(private router: Router) {}
+  isLoggedIn$:Observable<boolean>;
+  isLoggedOut$:Observable<boolean>;
 
+  constructor(private route: Router, 
+    private store: Store<AppState>) {}
+
+  ngOnInit(): void {
+    this.isLoggedIn$ = this.store
+    .pipe(select(isLoggedIn))
+    
+    this.isLoggedOut$ = this.store
+    .pipe(select(isLoggedOut))
+  }
+
+  logout() {
+    this.store.dispatch(logout());
+    this.route.navigateByUrl('/home');
+  }
 
 }
