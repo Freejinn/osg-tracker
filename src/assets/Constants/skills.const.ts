@@ -3795,3 +3795,354 @@ export const skillsConst: SkillParent[] = [
     ],
   },
 ];
+
+export const wolfConst: SkillParent[] = [
+  {
+    id:0,
+    label:'General Skills',
+    backgroundColor:'',
+    skills: [
+      {
+        id: 0,
+        imgPath: '',
+        label: 'Tenderpad',
+        progressPercentage: 0,
+        parts: [
+          {
+            label: 'The Pack',
+            descrip: 'Explains what it means to enter the pack.',
+            selected: false,
+          },
+          {
+            label: 'The Law',
+            descrip: 'Recite from memory the Timberwolf Law and explain.',
+            selected: false,
+          },
+          {
+            label: 'The Promise',
+            descrip: 'Recite from memory the Timberwolf Promise and explain.',
+            selected: false,
+          },
+          {
+            label: 'The Salute',
+            descrip: 'Demonstrate the Timberwolf Salute.',
+            selected: false,
+          },
+          {
+            label: 'Pack Activities',
+            descrip: 'Take part in a Pack and Six activities.',
+            selected: false,
+          },
+          {
+            label: 'Grand Howl',
+            descrip: 'Show that you know how to do the Grand Howl.',
+            selected: false,
+          },
+          {
+            label: 'The Motto',
+            descrip: 'Recite from memory the Timberwolf Motto and explain.',
+            selected: false,
+          },
+          {
+            label: 'History of Scouting',
+            descrip: 'Talk with your Pack about The Baden-Powell Family, or the history of scouting.',
+            selected: false,
+          },
+        ]
+    },
+      {
+        id: 1,
+        imgPath: '',
+        label: 'First Star',
+        progressPercentage: 0,
+        parts: [
+          {
+            label: 'The Flag',
+            descrip: 'Know about the flag: how to fly, symbols, and how to show respect.',
+            selected: false,
+          },
+          {
+            label: 'The National Anthem',
+            descrip: 'Know about the U.S. National Anthem.',
+            selected: false,
+          },
+          {
+            label: 'Knots',
+            descrip: 'Be able to tie a Reef(Square) Knot and a Sheet Bend and know uses.',
+            selected: false,
+          },
+          {
+            label: 'Hygiene and Health',
+            descrip: 'Know how to keep your body clean and healthy. Carry this out in practice.',
+            selected: false,
+          },
+          {
+            label: 'Physical Tasks',
+            descrip: 'Somersault, leapfrog, hop 25 yards, throw/catch a ball, jumprope, balance weight on head, and another choice activity.',
+            selected: false,
+          },
+          {
+            label: 'Telling Time',
+            descrip: 'Be able to tell time on an analog clock.',
+            selected: false,
+          },
+          {
+            label: 'Laundry Habits',
+            descrip: 'Show how to clean your shoes and fold clothes neatly.',
+            selected: false,
+          },
+          {
+            label: 'Road Rules',
+            descrip: 'Show that you understand road safety rules for biking and walking.',
+            selected: false,
+          },
+          {
+            label: 'Story Telling',
+            descrip: 'Make a list of books about topics that interest you. Tell a story to your pack.',
+            selected: false,
+          },
+          {
+            label: 'Service',
+            descrip: 'Have at least three months satisfactory service as a Timberwolf.',
+            selected: false,
+          },
+          {
+            label: 'Review',
+            descrip: 'Repass the Tenderpad Test.',
+            selected: false,
+          },
+        ]
+    },
+      {
+        id: 2,
+        imgPath: '',
+        label: 'Second Star',
+        progressPercentage: 0,
+        parts: [
+          {
+            label: 'Alternate Communication',
+            descrip: 'Alphabet in Semaphore, Morse Code, or American Sign Language.',
+            selected: false,
+          },
+          {
+            label: 'Compass',
+            descrip: 'Use a compass and show the knowledge of the eight principle points.',
+            selected: false,
+          },
+          {
+            label: 'Knots',
+            descrip: 'Know how to tie a bowline and a clove hitch and explain their usage.',
+            selected: false,
+          },
+          {
+            label: 'Thrift',
+            descrip: 'Understand the meaning of thrift in all things and show you are practicing such.',
+            selected: false,
+          },
+          {
+            label: 'Useful Creation',
+            descrip: 'Produce a sastisfactory model, a useful object, or a series of sketches by yourself.',
+            selected: false,
+          },
+          {
+            label: 'Fire',
+            descrip: 'Safely lay and light a fire and leave no trace after.',
+            selected: false,
+          },
+          {
+            label: 'Deliver a Message',
+            descrip: 'Run, cycle, or travel with a verbal message of at least 15 words and deliver it correctly.',
+            selected: false,
+          },
+          {
+            label: 'Phone Use',
+            descrip: 'Know how to use a phone to seek help in an emergency.',
+            selected: false,
+          },
+          {
+            label: 'Summoning an Adult',
+            descrip: 'Understand the necessity of summoning adult help in emergency.',
+            selected: false,
+          },
+          {
+            label: 'First Aid for Wound',
+            descrip: 'Understand the danger of dirt in a scratch or wound.',
+            selected: false,
+          },
+          {
+            label: 'Clean and Dress a Wound',
+            descrip: 'Show how to clean and dress a cut finger and treat a burn or scald.',
+            selected: false,
+          },
+          {
+            label: 'Addressing Shock',
+            descrip: 'Know the simple treatment for schock.',
+            selected: false,
+          },
+          {
+            label: 'Observing Nature',
+            descrip: 'Observe and point out three birds, three trees, and three other natural things.',
+            selected: false,
+          },
+          {
+            label: 'One Year Service',
+            descrip: 'Have at least 1 Scouting Year of satisfactory service as a Timberwolf.',
+            selected: false,
+          },
+          {
+            label: 'Review',
+            descrip: 'Repass the Tenderpaw and First Star tests.',
+            selected: false,
+          },
+        ]
+    },
+      {
+        id: 3,
+        imgPath: '',
+        label: 'Third Star',
+        progressPercentage: 0,
+        parts: [
+          {
+            label: '',
+            descrip: '.',
+            selected: false,
+          },
+          
+        ]
+    },
+      {
+        id: 4,
+        imgPath: '',
+        label: 'Silver Leaping Wolf',
+        progressPercentage: 0,
+        parts: [
+          {
+            label: '',
+            descrip: '.',
+            selected: false,
+          },
+          
+        ]
+    },
+      {
+        id: 5,
+        imgPath: '',
+        label: 'Gold Leaping Wolf',
+        progressPercentage: 0,
+        parts: [
+          {
+            label: '',
+            descrip: '.',
+            selected: false,
+          },
+          
+        ]
+    },
+    ]
+  },
+  {
+    id:1,
+    label:'Character Skills',
+    backgroundColor:'',
+    skills: [
+      {
+        id: 0,
+        imgPath: '',
+        label: '',
+        progressPercentage: 0,
+        parts: [
+          {
+            label: '',
+            descrip: '.',
+            selected: false,
+          },
+         
+        ]
+    },
+  ]
+},
+  {
+    id:2,
+    label:'Handicraft Skills',
+    backgroundColor:'',
+    skills: [
+      {
+        id: 0,
+        imgPath: '',
+        label: '',
+        progressPercentage: 0,
+        parts: [
+          {
+            label: '',
+            descrip: '.',
+            selected: false,
+          },
+         
+        ]
+    },
+  ]
+},
+  {
+    id:3,
+    label:'Service Skills',
+    backgroundColor:'',
+    skills: [
+      {
+        id: 0,
+        imgPath: '',
+        label: '',
+        progressPercentage: 0,
+        parts: [
+          {
+            label: '',
+            descrip: '.',
+            selected: false,
+          },
+         
+        ]
+    },
+  ]
+},
+  {
+    id:4,
+    label:'Physical Skills',
+    backgroundColor:'',
+    skills: [
+      {
+        id: 0,
+        imgPath: '',
+        label: '',
+        progressPercentage: 0,
+        parts: [
+          {
+            label: '',
+            descrip: '.',
+            selected: false,
+          },
+         
+        ]
+    },
+  ]
+},
+  {
+    id:5,
+    label:'Outdoor Skills',
+    backgroundColor:'',
+    skills: [
+      {
+        id: 0,
+        imgPath: '',
+        label: '',
+        progressPercentage: 0,
+        parts: [
+          {
+            label: '',
+            descrip: '.',
+            selected: false,
+          },
+         
+        ]
+    },
+  ]
+}
+]

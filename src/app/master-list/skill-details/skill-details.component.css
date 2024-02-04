@@ -2,6 +2,10 @@
     margin: 10px;
 }
 
+input:hover {
+  cursor: pointer;
+}
+
 h5, p {
   margin-left: .5rem;
 }

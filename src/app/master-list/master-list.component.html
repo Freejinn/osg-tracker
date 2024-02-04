@@ -1,11 +1,103 @@
   
-  <section>
+ <h1>Welcome</h1>
+ <div id="paragraph">
+   <h5>
+     Keep track of your progress toward skill mastery and badges!
+     <br><br>
+     Login to save your progress.
+   </h5>
+   </div>
+ 
+  <div class="links">  
+
+<div class="link-group" *ngIf="otterButton">
+  <a 
+  class="material-symbols-outlined"
+  id="handbook-link"
+  placement="top"
+  ngbTooltip="Handbook"
+  tooltipClass="my-costum-class"
+  *ngIf="handbookIcon"
+  >menu_book</a>
+  <a id="otter-link"
+  (click)="showOtterSkills()"
+  >Otter Skills List</a>
+</div>
+    
+<div class="link-group" *ngIf="wolfButton">
+<a 
+class="material-symbols-outlined"
+id="handbook-link"
+placement="top"
+ngbTooltip="Handbook"
+tooltipClass="my-costum-class"
+>menu_book</a>
+  <a id="timberwolf-link"
+  (click)="showWolfSkills()"
+  
+  >Timberwolf Skills List</a>
+</div>
+
+<div class="link-group" *ngIf="pathfinderButton">
+  <a 
+  class="material-symbols-outlined"
+  id="handbook-link"
+  placement="top"
+  ngbTooltip="Handbook"
+  tooltipClass="my-costum-class"
+  >menu_book</a>
+  <a id="pathfinder-link"
+  (click)="showPathfinderSkills()"
+  >
+  Pathfinder Skills List</a>
+</div>
+
+<div class="link-group"  *ngIf="roverButton"
+>
+  <a 
+  class="material-symbols-outlined"
+  id="handbook-link"
+  placement="top"
+  ngbTooltip="Handbook"
+  tooltipClass="my-costum-class"
+  >menu_book</a>
+  <a id="rover-link"
+  (click)="showRoverSkills()"
+  >Rover Skills List</a>
+</div>
+</div>
+  
+  <section 
+  id="timberwolves"
+  *ngIf="wolfSkill"
+  >
+    <ng-container *ngFor="let wolf of wolfList$ | async ">
+      <div ngbDropdown id="skill-container">
+        <button class="btn col-12"
+        ngbDropdownToggle>
+            {{ wolf?.label }}
+        </button>
+        <div class="col-12" 
+        ngbDropdownMenu id="skillList">
+          <app-skills
+          *ngFor="let skill of wolf?.skills"
+          [skill]="skill"
+          ></app-skills>
+        </div>
+      </div>
+    </ng-container>
+  </section>
+  
+  <section 
+  id="pathfinders"
+  *ngIf="pathfinderSkill"
+  >
     <ng-container *ngFor="let skillParent of skillParentList$ | async ">
       <div ngbDropdown id="skill-container">
-        <button class="btn col-12 text-light"
-        [ngStyle]="{'background-color': skillParent?.backgroundColor}"
+        <button class="btn col-12"
+        [ngStyle]="{'background-color':skillParent?.backgroundColor}"
         ngbDropdownToggle>
-            {{ skillParent?.label }}
+        {{ skillParent?.label }}
         </button>
         <div class="col-12" 
         ngbDropdownMenu id="skillList">
@@ -17,4 +109,5 @@
       </div>
     </ng-container>
   </section>
+
   

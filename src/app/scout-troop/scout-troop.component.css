@@ -12,8 +12,9 @@ a:hover {
     min-width: 25px;
   }
 
-  h5 {
+  .col-2 {
     margin: 0;
+    padding: 5px;
   }
   
   .list-group {
