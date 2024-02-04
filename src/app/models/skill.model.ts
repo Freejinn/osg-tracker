@@ -1,3 +1,10 @@
+// export interface SkillRank {
+//     id: number;
+//     label: string;
+//     backgroundColor: string;
+//     skillGroups: SkillParent[];
+// }
+
 export interface SkillParent {
     id: number;
     label: string;
