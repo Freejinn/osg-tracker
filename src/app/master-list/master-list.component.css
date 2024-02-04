@@ -37,7 +37,11 @@ a {
 h1 {
     text-align: center;
     padding: 10px;
+}
+
+.line {
     border-top: thick double #64815a;
+
 }
 
 h5 {
