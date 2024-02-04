@@ -1,4 +1,5 @@
-  
+  <div class="line"></div>
+ <div class="welcome" *ngIf="welcome">
  <h1>Welcome</h1>
  <div id="paragraph">
    <h5>
@@ -7,6 +8,7 @@
      Login to save your progress.
    </h5>
    </div>
+  </div>
  
   <div class="links">  
 
@@ -14,10 +16,11 @@
   <a 
   class="material-symbols-outlined"
   id="handbook-link"
+  href="https://docs.guides4guides.org/Otters/field_book_otters_v2_revised.pdf"
+  target="_blank"
   placement="top"
   ngbTooltip="Handbook"
   tooltipClass="my-costum-class"
-  *ngIf="handbookIcon"
   >menu_book</a>
   <a id="otter-link"
   (click)="showOtterSkills()"
@@ -28,6 +31,8 @@
 <a 
 class="material-symbols-outlined"
 id="handbook-link"
+href="https://docs.guides4guides.org/Timberwolves/Handbook_TWv7_WEB.pdf"
+target="_blank"
 placement="top"
 ngbTooltip="Handbook"
 tooltipClass="my-costum-class"
@@ -42,6 +47,8 @@ tooltipClass="my-costum-class"
   <a 
   class="material-symbols-outlined"
   id="handbook-link"
+  href="https://docs.guides4guides.org/Pathfinders/OSG+Pathfinder+Handbook.pdf"
+  target="_blank"
   placement="top"
   ngbTooltip="Handbook"
   tooltipClass="my-costum-class"
@@ -57,6 +64,8 @@ tooltipClass="my-costum-class"
   <a 
   class="material-symbols-outlined"
   id="handbook-link"
+  href="https://outdoorserviceguides.org/pdf/BPSA-US_Rover_Handbook.pdf"
+  target="_blank"
   placement="top"
   ngbTooltip="Handbook"
   tooltipClass="my-costum-class"
@@ -74,6 +83,8 @@ tooltipClass="my-costum-class"
     <ng-container *ngFor="let wolf of wolfList$ | async ">
       <div ngbDropdown id="skill-container">
         <button class="btn col-12"
+        [ngStyle]="{'background-color':wolf?.backgroundColor}"
+
         ngbDropdownToggle>
             {{ wolf?.label }}
         </button>

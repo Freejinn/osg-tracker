@@ -3800,7 +3800,7 @@ export const wolfConst: SkillParent[] = [
   {
     id:0,
     label:'General Skills',
-    backgroundColor:'',
+    backgroundColor:'rgb(35, 58, 42)',
     skills: [
       {
         id: 0,
@@ -4043,7 +4043,7 @@ export const wolfConst: SkillParent[] = [
   {
     id:1,
     label:'Character Skills',
-    backgroundColor:'',
+    backgroundColor:'#452c63',
     skills: [
       {
         id: 0,
@@ -4064,7 +4064,7 @@ export const wolfConst: SkillParent[] = [
   {
     id:2,
     label:'Handicraft Skills',
-    backgroundColor:'',
+    backgroundColor:'goldenrod',
     skills: [
       {
         id: 0,
@@ -4085,7 +4085,7 @@ export const wolfConst: SkillParent[] = [
   {
     id:3,
     label:'Service Skills',
-    backgroundColor:'',
+    backgroundColor:'#c73930',
     skills: [
       {
         id: 0,
@@ -4106,7 +4106,7 @@ export const wolfConst: SkillParent[] = [
   {
     id:4,
     label:'Physical Skills',
-    backgroundColor:'',
+    backgroundColor:'#416aed',
     skills: [
       {
         id: 0,
@@ -4127,7 +4127,7 @@ export const wolfConst: SkillParent[] = [
   {
     id:5,
     label:'Outdoor Skills',
-    backgroundColor:'',
+    backgroundColor:'#4eac31',
     skills: [
       {
         id: 0,
