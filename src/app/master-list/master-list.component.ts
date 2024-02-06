@@ -12,7 +12,6 @@ import { SkillParent } from '../models/skill.model';
 })
 export class MasterListComponent {
 
-  skillParts: number;
   listService = inject(PathfinderListService);
 
   wolfList$: Observable<SkillParent[]> = this.listService

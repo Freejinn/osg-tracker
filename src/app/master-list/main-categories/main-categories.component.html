@@ -1,5 +1,5 @@
- <div class="links">  
-
+ 
+<div class="links">  
 <div class="link-group" *ngIf="otterButton">
  <a 
  class="material-symbols-outlined"
@@ -27,7 +27,6 @@ tooltipClass="my-costum-class"
 >menu_book</a>
  <a id="timberwolf-link"
  (click)="showWolfSkills()"
- 
  >Timberwolf Skills List</a>
 </div>
 
@@ -42,13 +41,11 @@ tooltipClass="my-costum-class"
  tooltipClass="my-costum-class"
  >menu_book</a>
  <a id="pathfinder-link"
- (click)="showPathfinderSkills()"
- >
+ (click)="showPathfinderSkills()">
  Pathfinder Skills List</a>
 </div>
 
-<div class="link-group"  *ngIf="roverButton"
->
+<div class="link-group"  *ngIf="roverButton">
  <a 
  class="material-symbols-outlined"
  id="handbook-link"
@@ -63,10 +60,11 @@ tooltipClass="my-costum-class"
  >Rover Skills List</a>
 </div>
 </div>
+
+
 <section 
   id="timberwolves"
-  *ngIf="wolfSkill"
-  >
+  *ngIf="wolfSkill">
     <ng-container *ngFor="let wolf of wolfList$ | async ">
       <div ngbDropdown id="skill-container">
         <button class="btn col-12"
@@ -79,8 +77,8 @@ tooltipClass="my-costum-class"
         ngbDropdownMenu id="skillList">
           <app-skills
           *ngFor="let skill of wolf?.skills"
-          [skill]="skill"
-          ></app-skills>
+          [skill]="skill">
+          </app-skills>
         </div>
       </div>
     </ng-container>

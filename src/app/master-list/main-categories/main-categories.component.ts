@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SkillParent } from 'src/app/models/skill.model';
+import { SkillBadge, SkillParent } from 'src/app/models/skill.model';
 
 @Component({
   selector: 'app-main-categories',
