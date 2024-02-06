@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0);
+
+button {
+    font-size: 20px;
+    padding: 10px;
+    width: 98%;
+    margin: 5px;
+    border-radius: 0;
+    border: 2px solid;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover {
+    border: 2px solid;
+    font-weight: bolder;
+    color: white;
+}
+
+a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+
+h5 {
+    color: white;
+}
+
+
+
+.links {
+display: flex;    
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+margin: 10px;
+padding: 10px;
+}
+
+.link-group {
+    display: flex;
+    align-items: center;
+}
+
+#handbook-link {
+    margin: 10px;
+    font-size: 40px;
+    color: #64815a;
+}
+
+::ng-deep .tooltip-inner {
+    max-width: 340px;
+    text-align: left;
+    background-color: #fff;
+    color: #3f383f;
+    border-radius: 30px;
+    box-shadow: 0 0 3px #00000040;
+  }
+
+#otter-link {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border: thick double white;
+    background-color: #c73930;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 12px;
+    width: 215px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#timberwolf-link {
+    text-align: center;
+    border: thick double white;
+    background-color: goldenrod;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 12px;
+    width: 215px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#pathfinder-link {
+    text-align: center;
+    border: thick double white;
+    background-color: #416aed;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 12px;
+    width: 215px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#rover-link {
+    text-align: center;
+    border: thick double white;
+    background-color: rgb(35, 58, 42);
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 12px;
+    width: 215px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#skillList {
+    border-radius: 0; 
+    padding: 0;
+    width: 98%;
+}
+
+#skill-container {
+    background-color: #64815a;
+    text-align: center;
+}
+
+.dropdown-menu {
+    width: 100%;
+}
+
+@media only screen and (max-width: 550px) {
+    .links {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
