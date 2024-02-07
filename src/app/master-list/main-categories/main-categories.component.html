@@ -2,15 +2,6 @@
 <div class="links" id="links">  
 <div class="link-group" *ngFor="let skill of skillsList$ | async">
  <a 
- class="material-symbols-outlined"
- id="handbook-link"
- [href]="skill?.handbookUrl"
- target="_blank"
- placement="top"
- ngbTooltip="Handbook"
- [ngStyle]="{'color':skill?.backgroundColor}"
- >menu_book</a>
- <a 
  id="group-link"
  href="#skills-list"
  (click)="selectGroup(skill.skillGroups); groupSelected(skill)"
