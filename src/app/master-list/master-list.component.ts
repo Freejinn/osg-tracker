@@ -19,12 +19,4 @@ export class MasterListComponent {
   .pipe(
     tap((res)=> console.log('res', res))
   );
-
-  skillParentList$: Observable<SkillParent[]> = this.listService
-    .getPathList()
-    .pipe(
-      tap((res) => console.log('res', res)));
-
-  skillGroup$: Observable<ScoutGroup[]> 
-
 }

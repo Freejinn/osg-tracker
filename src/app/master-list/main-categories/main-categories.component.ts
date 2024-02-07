@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Observable, filter } from 'rxjs';
-import { ScoutGroup, SkillBadge, SkillParent } from 'src/app/models/skill.model';
+import { ScoutGroup, SkillParent } from 'src/app/models/skill.model';
 
 @Component({
   selector: 'app-main-categories',
@@ -8,89 +9,34 @@ import { ScoutGroup, SkillBadge, SkillParent } from 'src/app/models/skill.model'
   styleUrls: ['./main-categories.component.css']
 })
 export class MainCategoriesComponent {
-@Input() skillsList$: Observable<ScoutGroup[]>
-@Input() wolfList$: Observable<SkillParent[]>;
-@Input() skillParentList$: Observable<SkillParent[]>;
+hide: boolean = true;
+groupName: string;
+groupColor: string;
+groupUrl:string;
+skillsList:boolean;
 
+@Output() selectedGroup: EventEmitter<any> = new EventEmitter();
+@Input() skillsList$: Observable<ScoutGroup[]>
 @Input() category: SkillParent[]
+
 
 selectGroup(categ:SkillParent[]) {
   this.category = categ;
+  this.hide = false;
   console.log(categ)
+  this.skillsList = true;
 }
 
-otterButton: boolean = true;
-wolfButton: boolean = true;
-pathfinderButton: boolean = true;
-roverButton: boolean = true;
+groupSelected(group:any){
+this.selectedGroup.emit(group);
+this.groupName = group.label;
+this.groupColor = group.backgroundColor;
+this.groupUrl = group.handbookUrl;
+}
 
-// showOtterSkills() {
-//   if (this.otterSkill == false) {
-//     this.otterSkill = true;
-//     this.wolfButton = false;
-//     this.pathfinderButton = false;
-//     this.roverButton = false;
-//     this.welcome = false;
-//   } else {
-//     this.otterSkill = false;
-//     this.wolfButton = true;
-//     this.pathfinderButton = true;
-//     this.roverButton = true;
-//     this.welcome = true;
-//   }
-// }
+close(){
+  this.skillsList = false;
+  this.hide = true;
+}
 
-//   showWolfSkills() {
-//     if (this.wolfSkill == false) {
-//       this.wolfSkill = true;
-//       this.otterButton = false;
-//       this.pathfinderButton = false;
-//       this.roverButton = false;
-//       this.welcome = false;
-
-//     } else {
-//       this.wolfSkill = false;
-//       this.otterButton = true;
-//       this.pathfinderButton = true;
-//       this.roverButton = true;
-//       this.welcome = true;
-
-//     }
-//   }
-
-//   showPathfinderSkills() {
-//     if (this.pathfinderSkill == false) {
-//       this.pathfinderSkill = true;
-//       this.otterButton = false;
-//       this.wolfButton = false;
-//       this.roverButton = false;
-//       this.welcome = false;
-
-//     }else {
-//       this.pathfinderSkill = false;
-//       this.otterButton = true;
-//       this.wolfButton = true;
-//       this.roverButton = true;
-//       this.welcome = true;
-
-//     }
-//   }
-
-//   showRoverSkills() {
-//     if (this.roverSkill == false) {
-//       this.roverSkill = true;
-//       this.otterButton = false;
-//       this.wolfButton = false;
-//       this.pathfinderButton = false;
-//       this.welcome = false;
-
-//     } else {
-//       this.roverSkill = false;
-//       this.otterButton = true;
-//       this.wolfButton = true;
-//       this.pathfinderButton = true;
-//       this.welcome = true;
-
-//     }
-// }
 }
