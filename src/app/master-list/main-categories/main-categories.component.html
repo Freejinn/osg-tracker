@@ -1,5 +1,5 @@
  
-<div class="links">  
+<div class="links" id="links">  
 <div class="link-group" *ngFor="let skill of skillsList$ | async">
  <a 
  class="material-symbols-outlined"
@@ -10,18 +10,45 @@
  ngbTooltip="Handbook"
  [ngStyle]="{'color':skill?.backgroundColor}"
  >menu_book</a>
- 
  <a 
  id="group-link"
  href="#skills-list"
- (click)="selectGroup(skill.skillGroups)"
+ (click)="selectGroup(skill.skillGroups); groupSelected(skill)"
  [ngStyle]="{'background-color':skill?.backgroundColor}"
  >{{ skill?.label }}</a>
 </div>
 </div>
-  
-  <section id="skills-list">
-    <ng-container *ngFor="let cat of category">
+
+<div class="line"></div>
+<div 
+class="group-title"
+[hidden]="hide"
+[ngStyle]="{'background-color':groupColor}"
+>
+<a 
+ class="material-symbols-outlined"
+ id="handbook-link"
+ [href]="groupUrl"
+ target="_blank"
+ placement="top"
+ ngbTooltip="Handbook"
+ style="color: white;"
+ >menu_book</a>
+<h2>{{groupName}}</h2>
+<a 
+href="#links"
+(click)="close()"
+>
+    <span class="material-symbols-outlined" id="x-arrow">
+        close
+        </span></a>
+<div class="line"
+style="background-color: white;"></div>
+</div>
+
+
+  <section id="skills-list" *ngIf="skillsList">
+    <ng-container *ngFor="let cat of category" >
       <div ngbDropdown id="skill-container">
         <button class="btn col-12"
         [ngStyle]="{'background-color':cat?.backgroundColor}"

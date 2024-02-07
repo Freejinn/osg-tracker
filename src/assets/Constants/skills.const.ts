@@ -2,14 +2,14 @@ import { ScoutGroup, SkillParent } from 'src/app/models/skill.model';
 
 export const groupSkillsConst: ScoutGroup[] = [
   {id: 0, 
-    label:'Otter Skills List' , 
+    label:'Otter Skills' , 
     backgroundColor: '#c73930',
     handbookUrl: 'https://docs.guides4guides.org/Otters/field_book_otters_v2_revised.pdf',
     skillGroups: []
   },
   {
     id: 1,
-    label: 'Timberwolf Skills List',
+    label: 'Timberwolf Skills',
     backgroundColor: 'goldenrod',
     handbookUrl: 'https://docs.guides4guides.org/Timberwolves/Handbook_TWv7_WEB.pdf',
     skillGroups: [
@@ -365,7 +365,7 @@ export const groupSkillsConst: ScoutGroup[] = [
   },
   {
     id: 2,
-    label: 'Pathfinder Skills List',
+    label: 'Pathfinder Skills',
     backgroundColor: '#416aed',
     handbookUrl: 'https://docs.guides4guides.org/Pathfinders/OSG+Pathfinder+Handbook.pdf',
     skillGroups: [
@@ -4166,7 +4166,7 @@ export const groupSkillsConst: ScoutGroup[] = [
   },
   {
     id: 3,
-    label: 'Rover Skills List',
+    label: 'Rover Skills',
     backgroundColor: 'rgb(35, 58, 42)',
     handbookUrl: 'https://outdoorserviceguides.org/pdf/BPSA-US_Rover_Handbook.pdf',
     skillGroups: [

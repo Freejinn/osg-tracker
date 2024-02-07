@@ -14,5 +14,4 @@ export class SkillDetailsComponent {
   selectPart(part: SkillParts) {
     this.skillSelected.emit(part);
   }
-
 }
