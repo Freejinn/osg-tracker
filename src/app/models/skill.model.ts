@@ -1,9 +1,10 @@
-// export interface SkillRank {
-//     id: number;
-//     label: string;
-//     backgroundColor: string;
-//     skillGroups: SkillParent[];
-// }
+export interface ScoutGroup {
+    id: number;
+    label: string;
+    backgroundColor: string;
+    handbookUrl: string;
+    skillGroups: SkillParent[];
+}
 
 export interface SkillParent {
     id: number;

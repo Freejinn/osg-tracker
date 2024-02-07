@@ -1,104 +1,37 @@
  
 <div class="links">  
-<div class="link-group" *ngIf="otterButton">
+<div class="link-group" *ngFor="let skill of skillsList$ | async">
  <a 
  class="material-symbols-outlined"
  id="handbook-link"
- href="https://docs.guides4guides.org/Otters/field_book_otters_v2_revised.pdf"
+ [href]="skill?.handbookUrl"
  target="_blank"
  placement="top"
  ngbTooltip="Handbook"
- tooltipClass="my-costum-class"
+ [ngStyle]="{'color':skill?.backgroundColor}"
  >menu_book</a>
- <a id="otter-link"
- (click)="showOtterSkills()"
- >Otter Skills List</a>
-</div>
-   
-<div class="link-group" *ngIf="wolfButton">
-<a 
-class="material-symbols-outlined"
-id="handbook-link"
-href="https://docs.guides4guides.org/Timberwolves/Handbook_TWv7_WEB.pdf"
-target="_blank"
-placement="top"
-ngbTooltip="Handbook"
-tooltipClass="my-costum-class"
->menu_book</a>
- <a id="timberwolf-link"
- (click)="showWolfSkills()"
- >Timberwolf Skills List</a>
-</div>
-
-<div class="link-group" *ngIf="pathfinderButton">
+ 
  <a 
- class="material-symbols-outlined"
- id="handbook-link"
- href="https://docs.guides4guides.org/Pathfinders/OSG+Pathfinder+Handbook.pdf"
- target="_blank"
- placement="top"
- ngbTooltip="Handbook"
- tooltipClass="my-costum-class"
- >menu_book</a>
- <a id="pathfinder-link"
- (click)="showPathfinderSkills()">
- Pathfinder Skills List</a>
-</div>
-
-<div class="link-group"  *ngIf="roverButton">
- <a 
- class="material-symbols-outlined"
- id="handbook-link"
- href="https://outdoorserviceguides.org/pdf/BPSA-US_Rover_Handbook.pdf"
- target="_blank"
- placement="top"
- ngbTooltip="Handbook"
- tooltipClass="my-costum-class"
- >menu_book</a>
- <a id="rover-link"
- (click)="showRoverSkills()"
- >Rover Skills List</a>
+ id="group-link"
+ href="#skills-list"
+ (click)="selectGroup(skill.skillGroups)"
+ [ngStyle]="{'background-color':skill?.backgroundColor}"
+ >{{ skill?.label }}</a>
 </div>
 </div>
-
-
-<section 
-  id="timberwolves"
-  *ngIf="wolfSkill">
-    <ng-container *ngFor="let wolf of wolfList$ | async ">
-      <div ngbDropdown id="skill-container">
-        <button class="btn col-12"
-        [ngStyle]="{'background-color':wolf?.backgroundColor}"
-
-        ngbDropdownToggle>
-            {{ wolf?.label }}
-        </button>
-        <div class="col-12" 
-        ngbDropdownMenu id="skillList">
-          <app-skills
-          *ngFor="let skill of wolf?.skills"
-          [skill]="skill">
-          </app-skills>
-        </div>
-      </div>
-    </ng-container>
-  </section>
   
-  <section 
-  id="pathfinders"
-  *ngIf="pathfinderSkill"
-  >
-    <ng-container *ngFor="let skillParent of skillParentList$ | async ">
+  <section id="skills-list">
+    <ng-container *ngFor="let cat of category">
       <div ngbDropdown id="skill-container">
         <button class="btn col-12"
-        [ngStyle]="{'background-color':skillParent?.backgroundColor}"
+        [ngStyle]="{'background-color':cat?.backgroundColor}"
         ngbDropdownToggle>
-        {{ skillParent?.label }}
+        {{ cat?.label }}
         </button>
         <div class="col-12" 
         ngbDropdownMenu id="skillList">
           <app-skills
-          *ngFor="let skill of skillParent?.skills"
+          *ngFor="let skill of cat?.skills"
           [skill]="skill"
           ></app-skills>
         </div>
