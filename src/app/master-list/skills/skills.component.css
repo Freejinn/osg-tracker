@@ -1,14 +1,22 @@
+a {
+  border-radius: 5px;
+}
+
 a:hover {
   cursor: pointer;
 }
+
+h5 {
+  color:  #3f383f;
+}
+
 img {
   margin-right: 10px;
 }
 
 .list-group {
-  background-color: #556b2f;
-  border-radius: 0;
   display: flex;
+  padding: 5px;
 }
 
 #progress-bar {
@@ -36,11 +44,10 @@ p {
 }
 
 .dropdown-menu {
-  width: 100%;
+  width: 98%;
   transition: 0.5s;
-  border: 5px solid  #3f383f;
+  border: 2px solid  #3f383f;
   color:  #3f383f;
-  border-radius: 0;
 }
 
 

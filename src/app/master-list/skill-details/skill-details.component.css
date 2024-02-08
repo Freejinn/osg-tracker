@@ -6,9 +6,9 @@ input:hover {
   cursor: pointer;
 }
 
-h5, p {
+/* h5, p {
   margin-left: .5rem;
-}
+} */
 
 .form-check-input[type='checkbox']:checked {
     background-color: #c73930;

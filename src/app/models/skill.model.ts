@@ -2,7 +2,9 @@ export interface ScoutGroup {
     id: number;
     label: string;
     backgroundColor: string;
+    pic: string;
     handbookUrl: string;
+    motto: string;
     skillGroups: SkillParent[];
 }
 
