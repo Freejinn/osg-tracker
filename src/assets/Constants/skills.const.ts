@@ -3,15 +3,19 @@ import { ScoutGroup, SkillParent } from 'src/app/models/skill.model';
 export const groupSkillsConst: ScoutGroup[] = [
   {id: 0, 
     label:'Otter Skills' , 
-    backgroundColor: '#c73930',
+    backgroundColor: '#ff1717',
+    pic: 'https://i0.wp.com/outdoorserviceguides.org/wp-content/uploads/2022/03/cropped-Otter-Icon.png?fit=300%2C300&ssl=1',
     handbookUrl: 'https://docs.guides4guides.org/Otters/field_book_otters_v2_revised.pdf',
+    motto: 'Busy and bright!',
     skillGroups: []
   },
   {
     id: 1,
     label: 'Timberwolf Skills',
-    backgroundColor: 'goldenrod',
+    backgroundColor: '#a6a6a6',
+    pic: 'https://i0.wp.com/outdoorserviceguides.org/wp-content/uploads/2022/03/TW-Icon.png?fit=300%2C300&ssl=1',
     handbookUrl: 'https://docs.guides4guides.org/Timberwolves/Handbook_TWv7_WEB.pdf',
+    motto: 'Do your best!',
     skillGroups: [
       {
         id:0,
@@ -366,8 +370,10 @@ export const groupSkillsConst: ScoutGroup[] = [
   {
     id: 2,
     label: 'Pathfinder Skills',
-    backgroundColor: '#416aed',
+    backgroundColor: '#5296c5',
+    pic: 'https://i0.wp.com/outdoorserviceguides.org/wp-content/uploads/2022/03/PF-Icon.png?fit=300%2C300&ssl=1',
     handbookUrl: 'https://docs.guides4guides.org/Pathfinders/OSG+Pathfinder+Handbook.pdf',
+    motto: 'Be prepared!',
     skillGroups: [
       {
         id: 1,
@@ -4167,8 +4173,10 @@ export const groupSkillsConst: ScoutGroup[] = [
   {
     id: 3,
     label: 'Rover Skills',
-    backgroundColor: 'rgb(35, 58, 42)',
+    backgroundColor: '#76a36c',
+    pic: 'https://i0.wp.com/outdoorserviceguides.org/wp-content/uploads/2022/03/Rover-icon.png?fit=300%2C300&ssl=1',
     handbookUrl: 'https://outdoorserviceguides.org/pdf/BPSA-US_Rover_Handbook.pdf',
+    motto: 'Service',
     skillGroups: [
       
     ]

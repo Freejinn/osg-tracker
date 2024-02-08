@@ -4,16 +4,18 @@
 
 #paragraph {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: #64815a;
+    background-color: white;
     padding: 10px;
-    color: white;
+    color: #64815a;
   }
 
   h1 {
     text-align: center;
     padding: 10px;
+    color: #3f383f;
 }
 
 

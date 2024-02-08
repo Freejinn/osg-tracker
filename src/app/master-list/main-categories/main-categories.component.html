@@ -1,60 +1,69 @@
- 
-<div class="links" id="links">  
-<div class="link-group" *ngFor="let skill of skillsList$ | async">
- <a 
- id="group-link"
- href="#skills-list"
- (click)="selectGroup(skill.skillGroups); groupSelected(skill)"
- [ngStyle]="{'background-color':skill?.backgroundColor}"
- >{{ skill?.label }}</a>
-</div>
+<div class="card-group">
+<div
+  class="card"
+  id="group-card"
+  [ngStyle]="{ 'background-color': skill?.backgroundColor }"
+  *ngFor="let skill of skillsList$ | async">
+    <div class="card-body">
+      <a
+        id="group-link"
+        href="#group-title"
+        (click)="selectGroup(skill.skillGroups); groupSelected(skill)"
+        [ngStyle]="{ 'border-color': skill?.backgroundColor }"
+        ><h5 class="card-title">{{ skill?.label }}</h5>
+        <img class="img-fluid" [src]="skill?.pic" alt="group icon">
+        <p class="card-text">{{ skill.motto }}</p>
+      </a>
+    </div>
+  </div>
 </div>
 
-<div class="line"></div>
-<div 
-class="group-title"
-[hidden]="hide"
-[ngStyle]="{'background-color':groupColor}"
+<div
+  class="group-title"
+  id="group-title"
+  [hidden]="hide"
+  [ngStyle]="{ 'color': groupColor }"
+
 >
-<a 
- class="material-symbols-outlined"
- id="handbook-link"
- [href]="groupUrl"
- target="_blank"
- placement="top"
- ngbTooltip="Handbook"
- style="color: white;"
- >menu_book</a>
-<h2>{{groupName}}</h2>
-<a 
-href="#links"
-(click)="close()"
->
-    <span class="material-symbols-outlined" id="x-arrow">
-        close
-        </span></a>
-<div class="line"
-style="background-color: white;"></div>
+  <a
+    class="material-symbols-outlined"
+    id="handbook-link"
+    [href]="groupUrl"
+    target="_blank"
+    placement="top"
+    ngbTooltip="Handbook"
+    [ngStyle]="{ 'color': groupColor }"
+    >menu_book</a
+  >
+  <h2>{{ groupName }}</h2>
+  <a href="#links" (click)="close()">
+    <span 
+    class="material-symbols-outlined" 
+    id="x-arrow"
+    [ngStyle]="{ 'color': groupColor }"
+    > close </span></a
+  >
+  <div class="line" style="background-color: white"></div>
 </div>
 
-
-  <section id="skills-list" *ngIf="skillsList">
-    <ng-container *ngFor="let cat of category" >
-      <div ngbDropdown id="skill-container">
-        <button class="btn col-12"
-        [ngStyle]="{'background-color':cat?.backgroundColor}"
-        ngbDropdownToggle>
+<section id="skills-list"
+ *ngIf="skillsList">
+  <ng-container *ngFor="let cat of category">
+    <div 
+    ngbDropdown id="skill-container">
+      <button
+        class="btn col-12"
+        [ngStyle]="{ 'color': cat?.backgroundColor }"
+        ngbDropdownToggle
+      >
         {{ cat?.label }}
-        </button>
-        <div class="col-12" 
-        ngbDropdownMenu id="skillList">
-          <app-skills
+      </button>
+      <div class="col-12" ngbDropdownMenu id="skillList">
+        <app-skills
           *ngFor="let skill of cat?.skills"
           [skill]="skill"
-          ></app-skills>
-        </div>
+        ></app-skills>
       </div>
-    </ng-container>
-  </section>
-
-  
+    </div>
+  </ng-container>
+</section>

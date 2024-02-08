@@ -8,7 +8,7 @@ button {
     border-radius: 0;
     border: 2px solid;
     border-radius: 12px;
-    color: white;
+    background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -16,12 +16,12 @@ button {
 button:hover {
     border: 2px solid;
     font-weight: bolder;
-    color: white;
+    background-color: white;
 }
 
 
 a {
-    color: black;
+    color: white;
     font-size: 20px;
     text-decoration: none;
     cursor: pointer;
@@ -36,14 +36,13 @@ h2 {
     padding: 15px;
     text-align: center;
     margin: 0;
-    color: white;
 }
 
 h5 {
-    color: white;
+    /* color: white; */
 }
 
-.links {
+.card {
 display: flex;    
 flex-direction: row;
 flex-wrap: wrap;
@@ -53,9 +52,12 @@ margin: 10px;
 padding: 10px;
 }
 
-.link-group {
+.card-group {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    margin: 20px;
 }
 
 #handbook-link {
@@ -83,7 +85,7 @@ padding: 10px;
     color:white;
 }
 
-#group-link {
+#group-card {
     display: flex;
     text-align: center;
     justify-content: center;
@@ -92,28 +94,34 @@ padding: 10px;
     padding: 10px;
     margin: 10px;
     border-radius: 12px;
-    width: 215px;
+    min-width: 265px;
+    max-width: 265px;
+    min-height: 327px;
+    max-height: 327px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #skillList {
-    border-radius: 0; 
-    padding: 0;
+    border-radius: 5px; 
+    padding: 5px;
     width: 98%;
+    margin: 10px;
 }
 
 #skill-container {
-    background-color: #64815a;
     text-align: center;
+    margin: 10px;
 }
 
 .dropdown-menu {
     width: 100%;
+    transition: 0.5s;
+
 }
 
-@media only screen and (max-width: 550px) {
-    .links {
+@media only screen and (max-width: 500px) {
+    .card {
         flex-direction: column;
     }
 }
