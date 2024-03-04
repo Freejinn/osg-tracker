@@ -8,7 +8,7 @@
       <a
         id="group-link"
         href="#group-title"
-        (click)="selectGroup(skill.skillGroups); groupSelected(skill)"
+        (click)="selectGroup(skill.parents); groupSelected(skill);"
         [ngStyle]="{ 'border-color': skill?.backgroundColor }"
         ><h5 class="card-title">{{ skill?.label }}</h5>
         <img class="img-fluid" [src]="skill?.pic" alt="group icon">
@@ -54,13 +54,12 @@
       <button
         class="btn col-12"
         [ngStyle]="{ 'color': cat?.backgroundColor }"
-        ngbDropdownToggle
-      >
+        ngbDropdownToggle>
         {{ cat?.label }}
       </button>
       <div class="col-12" ngbDropdownMenu id="skillList">
         <app-skills
-          *ngFor="let skill of cat?.skills"
+          *ngFor="let skill of cat?.badges"
           [skill]="skill"
         ></app-skills>
       </div>

@@ -5,7 +5,6 @@ import { Observable, tap } from 'rxjs';
 import { ScoutGroup, SkillParent } from '../models/skill.model';
 import { AppState } from '../reducers';
 import { Store, select } from '@ngrx/store';
-import { Router } from '@angular/router';
 import { isLoggedIn, isLoggedOut } from '../auth/auth.selectors';
 
 @Component({
@@ -21,7 +20,6 @@ export class MasterListComponent implements OnInit {
 
   constructor(
     private store: Store<AppState>,
-    private route: Router
     ) {}
 
     listService = inject(PathfinderListService);
