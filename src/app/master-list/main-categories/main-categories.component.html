@@ -49,8 +49,7 @@
 <section id="skills-list"
  *ngIf="skillsList">
   <ng-container *ngFor="let cat of category">
-    <div 
-    ngbDropdown id="skill-container">
+    <div ngbDropdown id="skill-container">
       <button
         class="btn col-12"
         [ngStyle]="{ 'color': cat?.backgroundColor }"
