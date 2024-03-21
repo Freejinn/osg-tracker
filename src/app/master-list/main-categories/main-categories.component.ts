@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ScoutGroup, SkillParent } from 'src/app/models/skill.model';
+import { Observable, fromEvent } from 'rxjs';
+import { ScoutGroup, SkillBadge, SkillParent } from 'src/app/models/skill.model';
 
 @Component({
   selector: 'app-main-categories',
@@ -14,6 +14,9 @@ export class MainCategoriesComponent {
   groupUrl: string;
   skillsList: boolean;
   category: SkillParent[];
+  badgeList: boolean;
+  badge: SkillBadge[];
+
 
   @Input() skillsList$: Observable<ScoutGroup[]>;
 
@@ -24,8 +27,16 @@ export class MainCategoriesComponent {
     this.skillsList = true;
   }
 
+  selectBadge(oneBadge: SkillBadge[]) {
+    this.badge = oneBadge;
+    this.badgeList = !this.badgeList; //close toggle
+  }
+
+  badgeSelected(badge: any) {
+    
+  }
+
   groupSelected(group: any) {
-    // this.selectedGroup.emit(group);
     this.groupName = group.label;
     this.groupColor = group.backgroundColor;
     this.groupUrl = group.handbookUrl;

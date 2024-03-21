@@ -49,14 +49,17 @@
 <section id="skills-list"
  *ngIf="skillsList">
   <ng-container *ngFor="let cat of category">
-    <div ngbDropdown id="skill-container">
+    <div id="skill-container">
       <button
         class="btn col-12"
         [ngStyle]="{ 'color': cat?.backgroundColor }"
-        ngbDropdownToggle>
+        (click)="selectBadge(cat.badges)">
         {{ cat?.label }}
       </button>
-      <div class="col-12" ngbDropdownMenu id="skillList">
+      <div
+      *ngIf="badgeList" 
+      class="col-12" 
+      id="skillList">
         <app-skills
           *ngFor="let skill of cat?.badges"
           [skill]="skill"

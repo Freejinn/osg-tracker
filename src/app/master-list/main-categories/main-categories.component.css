@@ -108,10 +108,10 @@ padding: 10px;
 }
 
 #skillList {
+    display: flex;
+    flex-direction: column;
     border-radius: 5px; 
-    padding: 5px;
-    width: 98%;
-    margin: 10px;
+    justify-content: center;
 }
 
 #skill-container {
@@ -130,8 +130,6 @@ padding: 10px;
         flex-direction: column;
     }
 }
-
-
 
 
 
