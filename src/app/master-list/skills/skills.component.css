@@ -1,5 +1,6 @@
 a {
   border-radius: 5px;
+  border: 2px solid;
 }
 
 a:hover {
@@ -44,9 +45,10 @@ p {
 }
 
 .dropdown-menu {
-  width: 98%;
+  align-items: center;
+  width: 99%;
   transition: 0.5s;
-  border: 2px solid  #3f383f;
+  border: 1px solid  #3f383f;
   color:  #3f383f;
 }
 

@@ -30,9 +30,9 @@ import { metaReducers, reducers } from './reducers';
     BrowserModule, 
     NgbTooltip,
     AppRoutingModule, 
+    MasterListModule,
     NgbModule,
     HttpClientModule, 
-    MasterListModule,
     AuthModule, 
     StoreModule.forRoot(reducers, {
       metaReducers

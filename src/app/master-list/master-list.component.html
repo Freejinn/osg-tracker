@@ -2,10 +2,14 @@
 <h1>Welcome</h1>
 <div id="paragraph">
   <h3>Keep track of your progress toward skill mastery and badges!</h3>
-   <p>Login to save your progress.</p> 
+   <p *ngIf="isLoggedOut$ | async"><span><a routerLink="/login">Login</a></span> to save your progress.</p> 
   </div>
   <div class="line"></div>
 
+  <button class="btn btn-primary" 
+  (click)="cakes(recipe, reserves)"
+  hidden
+  >Test</button>
 
 <app-main-categories
   [skillsList$]="skillsList$"

@@ -1,3 +1,4 @@
+
 <div ngbDropdown >
   <div class="list-group">
     <a class="list-group-item clearfix"
@@ -5,10 +6,10 @@
     ngbDropdownToggle>
       <div class="d-flex align-items-center" style="display: flex;">
         <img
-          [src]="skill.imgPath"
+          [src]="skill?.imgPath"
           alt="{{skill.label}}"
           class="img-responsive col-2"
-          style="max-width: 40px"
+          style="max-width: 40px; max-height: 46px;"
         />
         <h5 
         > {{skill.label}}</h5>
@@ -31,7 +32,7 @@
       </div>
     </div>
     </a>
-    <div class="col-11" 
+    <div class="col 12"
     ngbDropdownMenu>
     <app-skill-details
     [parts]="skill?.parts"

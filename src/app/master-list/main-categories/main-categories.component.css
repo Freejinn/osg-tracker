@@ -6,7 +6,7 @@ button {
     width: 98%;
     margin: 5px;
     border-radius: 0;
-    border: 2px solid;
+    /* border: 4px solid; */
     border-radius: 12px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
@@ -14,7 +14,7 @@ button {
 }
 
 button:hover {
-    border: 2px solid;
+    /* border: 4px solid; */
     font-weight: bolder;
     background-color: white;
 }
@@ -78,6 +78,11 @@ padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 #x-arrow {
@@ -94,19 +99,19 @@ padding: 10px;
     padding: 10px;
     margin: 10px;
     border-radius: 12px;
-    min-width: 265px;
-    max-width: 265px;
-    min-height: 327px;
-    max-height: 327px;
+    min-width: 255px;
+    max-width: 255px;
+    min-height: 317px;
+    max-height: 317px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #skillList {
+    display: flex;
+    flex-direction: column;
     border-radius: 5px; 
-    padding: 5px;
-    width: 98%;
-    margin: 10px;
+    justify-content: center;
 }
 
 #skill-container {
@@ -125,8 +130,6 @@ padding: 10px;
         flex-direction: column;
     }
 }
-
-
 
 
 
