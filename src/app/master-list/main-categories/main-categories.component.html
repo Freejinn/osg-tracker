@@ -1,29 +1,31 @@
+<!-- Scout Group Cards -->
 <div class="card-group">
-<div
-  class="card"
-  id="group-card"
-  [ngStyle]="{ 'background-color': skill?.backgroundColor }"
-  *ngFor="let skill of skillsList$ | async">
+  <div
+    class="card"
+    id="group-card"
+    [ngStyle]="{ 'background-color': skill?.backgroundColor }"
+    *ngFor="let skill of skillsList$ | async"
+  >
     <div class="card-body">
       <a
         id="group-link"
         href="#group-title"
-        (click)="selectGroup(skill.parents); groupSelected(skill);"
+        (click)="selectGroup(skill.parents); groupSelected(skill)"
         [ngStyle]="{ 'border-color': skill?.backgroundColor }"
         ><h5 class="card-title">{{ skill?.label }}</h5>
-        <img class="img-fluid" [src]="skill?.pic" alt="group icon">
+        <img class="img-fluid" [src]="skill?.pic" alt="group icon" />
         <p class="card-text">{{ skill.motto }}</p>
       </a>
     </div>
   </div>
 </div>
 
+<!-- Label for skill group with link to handbook -->
 <div
   class="group-title"
   id="group-title"
-  [hidden]="hide"
-  [ngStyle]="{ 'color': groupColor }"
-
+  [hidden]="hideSkills"
+  [ngStyle]="{ color: groupColor }"
 >
   <a
     class="material-symbols-outlined"
@@ -32,39 +34,49 @@
     target="_blank"
     placement="top"
     ngbTooltip="Handbook"
-    [ngStyle]="{ 'color': groupColor }"
+    [ngStyle]="{ color: groupColor }"
     >menu_book</a
   >
   <h2>{{ groupName }}</h2>
-  <a href="#links" (click)="close()">
-    <span 
-    class="material-symbols-outlined" 
-    id="x-arrow"
-    [ngStyle]="{ 'color': groupColor }"
-    > close </span></a
+  <a href="#links" (click)="closeSkills()">
+    <span
+      class="material-symbols-outlined"
+      id="x-arrow"
+      [ngStyle]="{ color: groupColor }"
+    >
+      close
+    </span></a
   >
   <div class="line" style="background-color: white"></div>
 </div>
 
-<section id="skills-list"
- *ngIf="skillsList">
+<!-- List of Skills -->
+<section id="skills-list" *ngIf="skillsList">
   <ng-container *ngFor="let cat of category">
     <div id="skill-container">
       <button
         class="btn col-12"
-        [ngStyle]="{ 'color': cat?.backgroundColor }"
-        (click)="selectBadge(cat.badges)">
+        [ngStyle]="{ color: cat?.backgroundColor }"
+        (click)="selectSkill(cat.badges); skillSelected(cat)"
+      >
         {{ cat?.label }}
       </button>
-      <div
-      *ngIf="badgeList" 
-      class="col-12" 
-      id="skillList">
-        <app-skills
-          *ngFor="let skill of cat?.badges"
-          [skill]="skill"
-        ></app-skills>
-      </div>
     </div>
   </ng-container>
 </section>
+
+<!-- Label for badges -->
+<div [hidden]="hideBadges">
+  <button 
+    class="btn col-12"   
+    [ngStyle]="{ color: skillColor }"
+    (click)="closeBadges()">
+      {{ skillName }}
+      <a href="#links" ></a>
+  </button>
+</div>
+
+<!-- List of badges -->
+<div class="col-12" [hidden]="hideBadges" *ngIf="badgeList">
+  <app-skills *ngFor="let skill of badge" [skill]="skill"> </app-skills>
+</div>

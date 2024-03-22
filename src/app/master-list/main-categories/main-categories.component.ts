@@ -8,7 +8,8 @@ import { ScoutGroup, SkillBadge, SkillParent } from 'src/app/models/skill.model'
   styleUrls: ['./main-categories.component.css'],
 })
 export class MainCategoriesComponent {
-  hide: boolean = true;
+  hideSkills: boolean = true;
+  hideBadges: boolean = true;
   groupName: string;
   groupColor: string;
   groupUrl: string;
@@ -16,35 +17,50 @@ export class MainCategoriesComponent {
   category: SkillParent[];
   badgeList: boolean;
   badge: SkillBadge[];
+  hidden: boolean;
+  skillName: string;
+  skillColor: string;
+
 
 
   @Input() skillsList$: Observable<ScoutGroup[]>;
 
   selectGroup(categ: SkillParent[]) {
     this.category = categ;
-    this.hide = false;
+    this.hideSkills = false;
     console.log(categ);
     this.skillsList = true;
   }
 
-  selectBadge(oneBadge: SkillBadge[]) {
-    this.badge = oneBadge;
-    this.badgeList = !this.badgeList; //close toggle
-  }
-
-  badgeSelected(badge: any) {
-    
-  }
-
-  groupSelected(group: any) {
+  groupSelected(group: ScoutGroup) {
     this.groupName = group.label;
     this.groupColor = group.backgroundColor;
     this.groupUrl = group.handbookUrl;
   }
 
-  close() {
+  selectSkill(oneSkill: SkillBadge[]) {
+    this.badge = oneSkill;
+    console.log(oneSkill)
+    this.badgeList = !this.badgeList; //close toggle
+    this.hideBadges = false;
+  }
+
+  skillSelected(skill: SkillParent) {
+    this.skillName = skill.label;
+    this.skillColor = skill.backgroundColor;
     this.skillsList = false;
-    this.hide = true;
+  }
+
+  closeSkills() {
+    this.skillsList = false;
+    this.hideSkills = true;
+    this.hideBadges = true;
+  }
+
+  closeBadges() {
+    this.badgeList = false;
+    this.skillsList = true;
+    this.hideBadges = true;
   }
 
 
